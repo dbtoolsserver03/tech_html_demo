@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>エデン(株)のエントリーシート</title>
+<link rel="stylesheet" type="text/css" href="yuhsiu210405-2.css"/>
+
+   <style type="text/css">
+   div{text-align:center}
+   textarea {resize: none}
+   </style>
+
+
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+   <script type="text/javascript">
+   
+   window.onload = function(){   
+	   alert( "welcome to Eden world ");
+	   };
+   
+
+	   $(document).ready(function(){
+			  $("#my_ret_btn").click(function(){
+				  
+					var arr = $("input[name='sex']:checked");
+
+				  	debugger;
+					var str = "";
+					for(var i = 0; i < arr.length; i++) {
+						str = str + arr[i].nextSibling.textContent;
+						str = str + ",";
+					}
+					 $("#my_ret_text")[0].value=str;
+					 console.log (str);
+			  });
+			});
+	   
+
+      
+      
+//       $(document).ready(function 完成(){
+//     	  $("select").change(function(){
+//     		  const result = $("option:selected").text();
+//     		  console.log (result);
+//     	  });
+//       }); 
+      
+    		  
+//       $(document).ready(function 完成(){
+//           $("select").change(function(){
+//     		  const result = $("input").val();
+//     		  console.log (result );
+
+//     	  });
+//       });
+      
+      
+    </script>
+
+
+
+</head>
+
+
+
+<body  background="">
+  <h1 align="center">エントリーシートの登録</h1>
+  <br>
+  <hr>
+  <h2 align="center">ご応募いただきありがとうございます</h2>
+  <pre></pre>
+  
+    <p align="center">面接までに進むのかたにはこのエントリーシートの登録から<font color="red">三日間</font>
+       、ご連絡しております。<br>
+    <font color="blue">面接を受けるかたしか返信しませんので、ご了承いただき誠にありがとうございます。</font>
+    <br>
+<!--     <img loading="lazy" alt="申し訳ございません" src="shazai_2.gif" width="275" height="200"> -->
+  <br><br>
+  <pre></pre>
+  </p>
+
+    <div id= "header">次の個人情報をご登録お願い致します</div>
+
+    <p>
+    <table align="center" border="0" style="width:35%">
+ 
+      <tr>
+        <td>姓&nbsp;<input type="text"/>&nbsp;&nbsp;&nbsp;
+            名&nbsp;<input type="text"/>&nbsp;&nbsp;&nbsp;
+            性別<input type="radio" name="sex" id="mybutton_01" value=0 checked="checked"/>男
+                <input type="radio" name="sex" id="mybutton_02" value=1/>女
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td>
+        生年月日&nbsp;<input type="text" maxlength="8" placeholder="20181016"/>
+        年齢&nbsp;<input type="text" maxlength="2"/>
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td>在留資格
+        <select>
+        <option value="1">永住者</option>
+        <option selected="selected" value="2">高度専門職</option>
+        <option value="3">技術・人文知識・国際業務</option>
+        <option value="4">留学</option>
+        <option value="5">特定活動</option>
+        <option value="6">研修</option>
+        </select>&nbsp;&nbsp;その他&nbsp;<input type="text"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>最寄り駅&nbsp;<input type="text" placeholder="中央総武線-東中野駅"/>
+        在留期間&nbsp;<input type="text" maxlength="3" placeholder="六か月"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>日本に住む期間&nbsp;<input type="text"/> &lt;例：約二年&gt;</td>
+      </tr>
+      
+    </table>
+
+
+     <p align="center">
+<!--      <button id="my_ret_btn" value="">完成</button> -->
+     
+     <input type="button" id="my_ret_btn" value="完成">
+     
+     <br><br><br>入力した内容<br>
+      <textarea rows="6" cols="50" id="my_ret_text">
+      
+      </textarea>
+     </p>
+     
+    
+    
+    <p align="center">
+      <button value="" onclick="確認()">確認</button>
+      &nbsp;&nbsp;<input type="submit" value="提出" />
+    </p>
+    
+        
+
+    
+
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+@charset "UTF-8";
+body {background-color:#efefef};
+textarea {resize: none};
+#header{font-size:110%; font-weight:0; color:black; background-color:transparent; };

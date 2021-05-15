@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>正社員</title>
+<link rel="stylesheet" type="text/css" href="main.css"/>
+
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	
+	String.prototype.getQuery = function(name)
+	{
+	    var reg = new RegExp("(^|&)"+ name+"=([^&]*)(&|$)");
+	    var r = this.substr(this.indexOf("?")+1).match(reg);
+	    if(r!=null) return decodeURIComponent(r[2]); 
+	    return null;
+	}
+	var str = location.search;
+	
+// 	$("#id_user_id")[0].textContent = str.getQuery("userId");
+	var paraUserIdVal = str.getQuery("userId");
+	$("#id_user_id").text(paraUserIdVal);
+// 	var paraResultVal = str.getQuery("result");
+	
+	});
+
+
+
+// 	$("#id_btnBk").click(function(){
+// 		  window.location = 'group.html?userId='+paraUserIdVal;
+
+// });
+
+
+</script>
+
+
+</head>
+
+
+<body bgcolor="#efefef">
+  <h1 align="center">会社組織</h1>
+  <hr>
+  <div align="right"><a href="login.html" style="color: darkolivegreen; font-size: 12px">ログアウト</a></div>
+
+  <div id="id_user_id" align="right"></div>
+    
+  <pre></pre>
+  
+  <div align="center">
+  <input id="id_btnBk" type="button" value="戻る" onclick="javascript:history.back(-1);"/>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自己紹介自動生成器</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script >
+
+	$(document).ready(function() {
+		$("#button").click(function() {
+			var arr = $("input[name='level']:checked");
+			var str = "この学校の";
+			for (var i = 0; i < arr.length; i++) {
+				str = str + arr[i].nextSibling.textContent;
+				str = str + "です。";
+			}
+			$("#text")[0].value = str;
+		});
+
+	});
+</script>
+</head>
+<body style="background-color: rgb(255, 213, 220);">
+	<div>
+		<h1 align="center">自己紹介について</h1>
+		<p align="center">
+			自己紹介の目的は、相手に自分のことを知ってもらい、人間関係をスムーズにするきっかけを作ることです。
+			<br>
+			よく話される自己紹介の基本項目を入力と話せる事ができますよ。
+		</p>
+		<table align="center" border="0">
+			<tr>
+				<td>姓：<input type="text">名：<input type="text"></td>
+							</tr>
+			</tr>
+			<tr>
+				<td>出身地：<input type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>誕生日：<input type="date">
+				</td>
+			</tr>
+			<tr>
+				<td>学部：<input name="department" type="radio">ビジネス部 
+				<input
+					name="department" type="radio">文学部
+					<input
+					name="department" type="radio">理学部
+				</td>
+			</tr>
+			<tr>
+				<td>学年：<input name="level" type="radio">新入生<input
+					name="level" type="radio">二年生<input name="level"
+					type="radio">三年生</td>
+			</tr>
+			<tr>
+				<td>目標会社： <select>
+						<option value="a">TOSHIBA</option>
+						<option value="b">SONY</option>
+						<option value="c">PANASONIC</option>
+						<option value="e">CANNON</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>趣味を選択（複数可）：<input type="checkbox" value="1" type="radio">楽器<input
+					type="checkbox" value="2" type="radio">スポーツ<input
+					type="checkbox" value="3">美術</td>
+				
+			</tr>
+		</table>
+		<br>
+		<p align="center">
+			自己紹介： <br>
+			<textarea rows="10" cols="100" id="text"></textarea>
+			<br> <input id="button" type="button"  value="OK">
+		</p>
+	</div>
+</body>

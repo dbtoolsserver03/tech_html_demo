@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新规作成Cosme</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("form").submit(function(){
+    alert("提交");
+  });
+});
+</script>
+<style type="text/css">
+body {
+	margin-left: 10px;
+	background: #5d9ab2   no-repeat top left;
+}
+
+.container {
+	text-align: center;
+}
+
+.center_div {
+	border: 1px solid gray;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	background-color: #d0f0f6;
+	text-align: left;
+	padding: 8px;
+}
+</style>
+</head>
+<body>
+<body>
+    <h1 align="center" style="color:#31beb4;font-size: 50px">会员情報入力</h1>
+             <p align="right" width="25%"><a href="CosmeLogin.html" style="color: #31beb4;font-size: 20px">ログアウト</a></p>
+  <br>
+  <div>
+	<table>
+	<tr>
+	<td width="25%">氏名（漢字）(ローマ字でも可)</td>
+	<td width="25%"></td>
+	<td width="25%"></td>
+	<td width="25%"></td>
+	</tr>
+		<tr>
+			<td width="10%" style="background-color:#32c3cd">姓：</td>
+			<td width="40%"><input id="id_text_sei" width="100%" type="text"></td>
+			<td width="10%" style="background-color:#32c3cd">名：</td>
+			<td width="40%"><input id="id_text_mei" width="100%" type="text"></td>
+		</tr>
+		<td>氏名(カナ)</td>
+		<tr>
+			<td width="20%" style="background-color:#32c3cd"> セイ:</td>
+			<td width="30%"><input id="id_text_xing"b width="100%" type="text"></td>
+			<td width="20%" style="background-color:#32c3cd"> メイ:</td>
+			<td width="30%"><input id="id_text_ming" width="100%" type="text"></td>
+		</tr>
+		<tr>
+		<td width="10%" style="background-color:#32c3cd"> 性別</td>
+		<td> <input name="sex"type="radio"  >女性 <input name="sex"  type="radio" >男性</td>
+				<td width="10%" style="background-color:#32c3cd">電話番号</td>
+				<td width="10%" ><input type="text"maxlength="13" placeholder="000-0000-0000"/>  </td>
+		</tr>
+			<td width="10%" style="background-color:#32c3cd">郵便番号(郵便番号が分からない方は
+			 <a href="https://www.post.japanpost.jp/zipcode/index.html" target="_blank" >こちら</a></td>
+						<td><input type="text"maxlength="3" >-<input type="text"maxlength="4" ></td>
+			<td width="25%" style="background-color:#32c3cd">住所</td>
+					<td width="30%"><input id="id_text_xing"b width="100%" 
+					type="text" placeholder="中央区銀座２-１２-３ライトマンション101号室" ></td>
+		<tr>
+					<td width="20%" style="background-color:#32c3cd">生年月日</td>
+			<td width="30%"><input id="id_text_tel" width="100%" type="date"></td>
+
+	
+			<td width="20%" style="background-color:#32c3cd">肤质</td>
+			<td>  <select>
+     <option value="1900">普通肌</option>
+     <option value="1900">乾燥肌 </option>
+     <option value="1900">脂性肌</option>
+     <option value="1900">混合肌</option>
+     <option value="1900">敏感肌</option>
+     <option value="1900">アトピー肌</option></td>
+	</tr>
+	<tr>
+			<td width="20%" style="background-color:#32c3cd">メールアドレス</td>
+			<td width="30%"><input id="id_text_xing"b width="100%" type="text"></td>
+			<td width="20%" style="background-color:#32c3cd">パスワード</td>
+			<td width="30%"><input id="id_text_ming" width="100%" type="text"></td>
+		</tr>
+	</table>
+</div>
+</div>
+	<div align="right">
+	 <form action="demo-form.php" method="get">
+		<input id="id_btn_back" class="btn-pink" type="button" value="戻る">
+		<input id="id_btn_clear" class="btn-pink" type="reset" value="クリア">
+		<input id="id_btn_ok" class="btn-pink" type="submit" value="提交">
+		</form>
+	</div>
+
+
+</form>
+   <br> <br> <br>
+   
+</body>
+</html>

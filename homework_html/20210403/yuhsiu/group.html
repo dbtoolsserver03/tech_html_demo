@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>正社員</title>
+<link rel="stylesheet" type="text/css" href="main.css"/>
+
+   <style type="text/css">
+   input[type="button"] {background-color:darkolivegreen; color:white; width:150px; }
+   input[name="submit"] {background-color:darkgreen; color:white; width:100px; }
+   textarea {resize: none}
+   </style>
+
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	
+	String.prototype.getQuery = function(name)
+	{
+	    var reg = new RegExp("(^|&)"+ name+"=([^&]*)(&|$)");
+	    var r = this.substr(this.indexOf("?")+1).match(reg);
+	    if(r!=null) return decodeURIComponent(r[2]); 
+	    return null;
+	}
+	var str = location.search;
+
+	var paraUserIdVal = str.getQuery("userId");
+	$("#id_user_id").text(paraUserIdVal);
+	
+ 	var paraResultVal = str.getQuery("result");
+ 	if ("" == paraResultVal || "777" == paraResultVal) {
+ 		$("#id_ei01").css('display','block');
+ 		$("#id_ei02").css('display','block');
+ 		$("#id_k").css('display','block');
+ 		$("#id_sb").addClass("sbBtn-gray");
+ 		$("#id_sb").attr("disabled",true);
+		
+ 	}else {
+ 		$("#id_ei01").css('display','none');
+ 		$("#id_ei02").css('display','none');
+ 		$("#id_k").css('display','none');
+ 		$("#id_sb").addClass("sbBtn-display-none");
+ 	}
+	
+ 	$('input:radio[name="level0"]').click(function(){
+ 		debugger;
+  	  $("#id_sb")[0].Class="sbBtn";
+  	  $("#id_sb").attr("disabled",false);
+ 	
+ 	});
+ 	
+ 	  
+ // ボタンコントロール
+	$("#id_mybtn_01").click(function(){
+		$("#id_ei01").css('display','block');
+		$("#id_ei02").hide();$("#id_k").hide()
+		});
+	$("#id_mybtn_02").click(function(){
+		$("#id_ei02").css('display','block');
+		$("#id_ei01").hide();$("#id_k").hide()
+	    });
+	$("#id_mybtn_k").click(function(){
+		$("#id_k").css('display','block');
+		$("#id_ei01").hide();$("#id_ei02").hide()
+		
+		
+		});
+	$('input:submit').click(function(){
+		  window.location = 'new.html?userId='+paraUserIdVal+
+				            '&mode=sb&selectVal='+
+				            $('input:radio[name="level0"]:checked').val();
+		});
+	
+	
+	
+	
+	
+});
+
+</script>
+
+</head>
+
+
+
+
+
+<body bgcolor="#efefef">
+  <h1 align="center">会社組織</h1>
+  <hr>
+  <div align="right"><a href="login.html" style="color: darkolivegreen; font-size: 12px">ログアウト</a></div>
+  <div id="id_user_id" align="right"></div>
+  <pre></pre>
+  
+  
+  <div>
+  <table width=100%>
+    <tbody><tr>
+     <td width=15% align="center">
+      <input id="id_mybtn_01" type="button" value="営業1部" /><br><br><br>
+      <input id="id_mybtn_02" type="button" value="営業2部"/><br><br><br>
+      <input id="id_mybtn_k" type="button" value="開発部"/><br><br><br>
+     </td>
+  
+     <td width=10% align="center">
+  
+     <td width=55% align="left" >
+        <div id="id_ei01" style="display: block;">
+          <table border=2 style="width:800px" bgcolor="#DEFFDE">
+
+           <tr>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th style="width: fit-content;">在席&nbsp;不在&nbsp;休み</th>
+              <th>行き先</th>
+              <th>内線/携帯番号</th>
+           </tr>
+       
+       
+           <tr>
+              <th>佐藤</th>
+              <th>&nbsp;<input id="my_01" name="level0" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_01" name="level0"type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_01" name="level0" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                      <option value="1">午前10時</option>                 
+                      <option value="2">午前11時</option>
+                      <option value="3">午前12時</option>
+                      <option selected="selected" value="4">午後1時</option>
+                      <option value="5">午後2時</option>
+                      <option value="6">午後3時</option>
+                      <option value="7">午後4時</option>
+                      <option value="8">午後5時</option>
+                      <option value="9">直帰</option>
+                      </select></th>
+              <th>001<br>01234567899</th>
+           </tr>
+
+         
+           <tr>
+              <th>安田</th>
+              <th>&nbsp;<input id="my_02" name="level1" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_02" name="level1" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_02" name="level1" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                       <option value="1">午前10時</option>
+                       <option value="2">午前11時</option>
+                       <option value="3">午前12時</option>
+                       <option selected="selected" value="4">午後1時</option>
+                       <option value="5">午後2時</option>
+                       <option value="6">午後3時</option>
+                       <option value="7">午後4時</option>
+                       <option value="8">午後5時</option>
+                       <option value="9">直帰</option>
+                       </select></th>
+              <th>002<br>02345678911</th>
+           </tr>
+          </table>
+          
+          <div align="center"><br>
+          <input id="id_sb01" type="submit" value="提出" name="submit" onclick="submit()" class="sbBtn">
+          </div>
+        </div>
+        
+        
+        <div id="id_ei02" style="display: block;">
+          <table border=2 style="width:800px" bgcolor="#DEFFDE">
+
+           <tr>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th style="width: fit-content;">在席&nbsp;不在&nbsp;休み</th>
+              <th>行き先</th>
+              <th>内線/携帯番号</th>
+           </tr>
+       
+       
+           <tr>
+              <th>藤田</th>
+              <th>&nbsp;<input id="my_03" name="level2" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_03" name="level2"type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_03" name="level2" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                      <option value="1">午前10時</option>                 
+                      <option value="2">午前11時</option>
+                      <option value="3">午前12時</option>
+                      <option selected="selected" value="4">午後1時</option>
+                      <option value="5">午後2時</option>
+                      <option value="6">午後3時</option>
+                      <option value="7">午後4時</option>
+                      <option value="8">午後5時</option>
+                      <option value="9">直帰</option>
+                      </select></th>
+              <th>003<br>03456789122</th>
+           </tr>
+
+         
+           <tr>
+              <th>高梨</th>
+              <th>&nbsp;<input id="my_04" name="level3" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_04" name="level3" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_04" name="level3" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                       <option value="1">午前10時</option>
+                       <option value="2">午前11時</option>
+                       <option value="3">午前12時</option>
+                       <option selected="selected" value="4">午後1時</option>
+                       <option value="5">午後2時</option>
+                       <option value="6">午後3時</option>
+                       <option value="7">午後4時</option>
+                       <option value="8">午後5時</option>
+                       <option value="9">直帰</option>
+                       </select></th>
+              <th>004<br>04567891233</th>
+           </tr>
+           
+           
+           <tr>
+              <th>小嶋</th>
+              <th>&nbsp;<input id="my_05" name="level4" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_05" name="level4" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_05" name="level4" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                       <option value="1">午前10時</option>
+                       <option value="2">午前11時</option>
+                       <option value="3">午前12時</option>
+                       <option selected="selected" value="4">午後1時</option>
+                       <option value="5">午後2時</option>
+                       <option value="6">午後3時</option>
+                       <option value="7">午後4時</option>
+                       <option value="8">午後5時</option>
+                       <option value="9">直帰</option>
+                       </select></th>
+              <th>005<br>05678912344</th>
+           </tr>
+           
+           
+          
+              
+          </table>
+          
+          <div align="center"><br>
+          <input id="id_sb02" type="submit" value="提出" name="submit" onclick="submit()" class="sbBtn">
+          </div>
+          
+        </div>
+        
+        
+        <div id="id_k" style="display: block;">
+          <table border=2 style="width:800px" bgcolor="#FFFFBF">
+
+           <tr>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th style="width: fit-content;">在席&nbsp;不在&nbsp;休み</th>
+              <th>行き先</th>
+              <th>内線/携帯番号</th>
+           </tr>
+       
+       
+           <tr>
+              <th>板垣</th>
+              <th>&nbsp;<input id="my_06" name="level5" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_06" name="level5"type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_06" name="level5" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                      <option value="1">午前10時</option>                 
+                      <option value="2">午前11時</option>
+                      <option value="3">午前12時</option>
+                      <option selected="selected" value="4">午後1時</option>
+                      <option value="5">午後2時</option>
+                      <option value="6">午後3時</option>
+                      <option value="7">午後4時</option>
+                      <option value="8">午後5時</option>
+                      <option value="9">直帰</option>
+                      </select></th>
+              <th>006<br>06789123455</th>
+           </tr>
+
+         
+           <tr>
+              <th>山田</th>
+              <th>&nbsp;<input id="my_07" name="level6" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_07" name="level6" type="radio">&nbsp;&nbsp;&nbsp;
+                        <input id="my_07" name="level6" type="radio">&nbsp;&nbsp;&nbsp;</th>
+              <th><input type="text" size=40/>&nbsp;&nbsp;
+              帰社時間&nbsp;<select>
+                       <option value="1">午前10時</option>
+                       <option value="2">午前11時</option>
+                       <option value="3">午前12時</option>
+                       <option selected="selected" value="4">午後1時</option>
+                       <option value="5">午後2時</option>
+                       <option value="6">午後3時</option>
+                       <option value="7">午後4時</option>
+                       <option value="8">午後5時</option>
+                       <option value="9">直帰</option>
+                       </select></th>
+              <th>007<br>07891234566</th>
+           </tr>
+
+          </table>
+          
+          <div align="center"><br>
+          <input id="id_sb03" type="submit" value="提出" name="submit" onclick="submit()" class="sbBtn">
+          </div>
+        </div>
+
+     </td>
+     <td width=20% align="left" >
+    </tr></tbody>
+  
+  </table>
+  
+  </div>
+
+   
+</body>
+</html>

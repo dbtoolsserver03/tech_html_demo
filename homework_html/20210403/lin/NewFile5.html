@@ -1,0 +1,59 @@
+
+<html lang="en">
+<head>
+
+<meta http-equiv="contenr-type" content="text/html;charset=UTF-8">
+<title>ログイン画面</title>
+
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	  $("#id_my_btn").click(function(){
+		  var userId = $("#id_user_id")[0].value;
+		  window.location = 'NewFile4.html?userId='+userId+'&result=notView';
+
+	  });
+	});
+
+</script>
+</head>
+<body>
+
+<div class="align-right"><a href="#">ユーザ新規</a>
+<br>
+</div>
+
+
+
+<div style="background-color:pink">
+<table width="100%">
+        <tbody><tr>
+            <td width="5%"></td>
+            <td width="20%">
+                <div align="right"><img src="./images/logo.png"></div>
+            </td>
+            <td width="50%"><p align="center" style="color:black">人事システム</p></td>
+            <td width="25%"></td>
+        </tr>
+    </tbody></table>
+
+
+</tbody>
+  
+    
+    </table>
+</div>
+<div align="center">
+    <br><br><br><br><br>
+    <input id="id_user_id" type="text" name="userId" style="background-color:DeepSkyBlue" placeholder="ログインID">
+    <br>
+    <input type="password" name="password" style="background-color:DeepSkyBlue" placeholder="パスワード">
+    <br><br>
+    <input id="id_my_btn" type="button" class="btn-pink" value="  ログイン  ">
+</div>
+</body>
+</html>

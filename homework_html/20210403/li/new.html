@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>会員一覧</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+<script src="./plug-in/jquery/jquery-3.4.1.js"></script>
+div
+<link rel="stylesheet" type="text/css" href="./plug-in/lightbox2-dev/dist/css/lightbox.css" />
+<script type="text/javascript" src="./plug-in/lightbox2-dev/dist/js/lightbox.js"></script>
+    <script type="text/javascript" src="./plug-in/spin/spin.min.js" ></script>
+
+
+<script>
+
+$(document).ready(function(){
+	
+	String.prototype.getQuery = function(name)
+	{
+	    var reg = new RegExp("(^|&)"+ name+"=([^&]*)(&|$)");
+	    var r = this.substr(this.indexOf("?")+1).match(reg);
+	    if(r!=null) return decodeURIComponent(r[2]); 
+	    return null;
+	}
+	var str = location.search;
+	var paraUserIdVal = str.getQuery("userId");
+	$("#id_user_id").text(paraUserIdVal);
+	var paraResultVal = str.getQuery("result");
+	var paraSeiVal = str.getQuery("sei");
+	var paraMeiVal = str.getQuery("mei");
+	var paraTelVal = str.getQuery("tel");
+	var paraAddressVal = str.getQuery("address");
+	  $("#id_btn_back").click(function(){
+		  window.location = 'list.html?userId='+paraUserIdVal+'&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+			
+	  });
+	  
+	});
+	
+</script>
+
+</head>
+
+<body>
+
+<body>
+<div id="id_user_id" class="align-right">
+
+</div>
+<div class="background-color">
+    <table width="100%">
+        <tr>
+            <td width="5%"></td>
+            <td width="20%">
+                <div align="right"><img src="./images/logo.png"/></div>
+            </td>
+            <td width="50%"><p align="center" style="color:white">音楽スタジオ新規会員</p></td>
+            <td align="right" width="25%"><a href="login.html" style="color: white;font-size: 12px">ログアウト</a></td>
+        </tr>
+    </table>
+</div>
+
+
+<div>
+	<table width="100%">
+		<tr>
+			<td width="20%" class="background-color-td">身份证正面</td>
+			<td width="30%" class="imgWrap"><a href="images/cart-front.jpg" data-lightbox="group-card"><img src="images/cart-front.png" width="258" height="120" /></a></td>
+			<td width="20%" class="background-color-td">身份证背面</td>
+			<td width="30%" class="imgWrap"><a href="images/cart-back.jpg" data-lightbox="group-card"><img src="images/cart-back.png" width="258" height="120" /></a></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">姓</td>
+			<td width="30%"><input id="id_text_sei" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">名</td>
+			<td width="30%"><input id="id_text_mei" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">電話番号</td>
+			<td width="30%"><input id="id_text_tel" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">住所</td>
+			<td width="30%"><input id="id_text_address" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">生年月日</td>
+			<td width="30%"><input id="id_text_tel" width="100%" type="date"></td>
+			<td width="20%" class="background-color-td">性別</td>
+			<td width="30%"><input name="sex" type="radio" />男 <input name="sex" type="radio" />女</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">練習したいスタジオ</td>
+			<td width="30%"><input name="level" type="radio" />A1 <input name="level" type="radio" />A2<input name="level" type="radio" />A3</td>
+			<td width="20%" class="background-color-td">コース</td>
+			<td width="30%">
+				<select>
+					<option value="z" selected="selected"></option>
+					<option value="a">1時間コース</option>
+					<option value="b">2時間コース</option>
+					<option value="c">3時間コース</option>
+					<option value="d">昼コース</option>
+					<option value="e">夜コース</option>
+				</select> 
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">用意する楽器</td>
+			<td  colspan="3" width="80%"><input type="checkbox" name="foreign" value="1">ギター<input
+			type="checkbox" name="foreign" value="2">ベース<input
+			type="checkbox" name="foreign" value="3">ドラム</td>
+		</tr>
+
+	</table>
+
+</div>
+	<div align="right">
+		<input id="id_btn_back" class="btn-pink" type="button" value="戻る">
+		<input id="id_btn_clear" class="btn-pink" type="button" value="クリア">
+		<input id="id_btn_ok" class="btn-pink" type="button" value="提交">
+	</div>
+
+</body>
+</html>
