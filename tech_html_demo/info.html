@@ -46,7 +46,14 @@ $(document).ready(function(){
 	} else if("update" == paraModeVal) {
 		type = "更新";
 		
-		
+	} else if("delete" == paraModeVal) {
+		type = "削除";
+		$("#id_btn_clear").addClass("btn-pink-display-none");
+		setReadOnly();
+	}
+	
+	if ("new" != paraModeVal) {
+
 		$("#id_text_sei").val("zhang");
 		$("#id_text_mei").val(paraSelectVal);
 		$("#id_text_tel").val("080-0001-000"+paraSelectVal);
@@ -60,12 +67,6 @@ $(document).ready(function(){
 		$("#id_chk_lan_japan").attr("checked",true);
 		
 		$("#id_select_salary")[0][3].selected = true;
-		
-		
-	} else if("delete" == paraModeVal) {
-		type = "削除";
-		$("#id_btn_clear").addClass("btn-pink-display-none");
-		setReadOnly();
 	}
 	$('title').text('人事情報'+type);
 	
@@ -128,7 +129,6 @@ $(document).ready(function(){
         </tr>
     </table>
 </div>
-
 
 <div id="id_info">
 	<table width="100%">
