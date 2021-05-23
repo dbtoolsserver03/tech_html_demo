@@ -11,8 +11,6 @@
 
 <link rel="stylesheet" type="text/css" href="./plug-in/lightbox2-dev/dist/css/lightbox.css" />
 <script type="text/javascript" src="./plug-in/lightbox2-dev/dist/js/lightbox.js"></script>
-    <script type="text/javascript" src="./plug-in/spin/spin.min.js" ></script>
-
 
 <script>
 
@@ -48,6 +46,23 @@ $(document).ready(function(){
 		setReadOnly();
 	} else if("update" == paraModeVal) {
 		type = "更新";
+		
+		
+		$("#id_text_sei").val("zhang");
+		$("#id_text_mei").val(paraSelectVal);
+		$("#id_text_tel").val("080-0001-000"+paraSelectVal);
+		$("#id_text_address").val("東京都中央区日本橋3-1-"+paraSelectVal);
+		$("#id_text_birthday").val("1998-01-0"+paraSelectVal);
+		$("#id_radio_sex_man").attr("checked",true);
+		$("#id_radio_level_pg").attr("checked",true);
+		
+		$("#id_chk_skill_java").attr("checked",true);
+		$("#id_chk_skill_c").attr("checked",true);
+		$("#id_chk_lan_japan").attr("checked",true);
+		
+		$("#id_select_salary")[0][3].selected = true;
+		
+		
 	} else if("delete" == paraModeVal) {
 		type = "削除";
 		$("#id_btn_clear").addClass("btn-pink-display-none");
@@ -57,8 +72,9 @@ $(document).ready(function(){
 	
 	  $("#id_btn_back").click(function(){
 		  
-			var paraSelectVal = str.getQuery("selectVal");
-		  window.location = 'list.html?userId='+paraUserIdVal+'&selectVal='+paraSelectVal+'&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  var paraSelectVal = str.getQuery("selectVal");
+		  var paraSei = str.getQuery("sei");
+		  window.location = 'list.html?userId='+paraUserIdVal+'&selectVal='+paraSelectVal+'&sei='+paraSei;
 			
 	  });
 	  $("#id_btn_clear").click(function(){
@@ -88,14 +104,14 @@ $(document).ready(function(){
 	  });
 	  
 	  
+	  
+	  
 	});
 	
 </script>
 
 </head>
 
-
-<body>
 
 <body>
 <div id="id_user_id" class="align-right">
@@ -137,13 +153,14 @@ $(document).ready(function(){
 		</tr>
 		<tr>
 			<td width="20%" class="background-color-td">生年月日</td>
-			<td width="30%"><input id="id_text_tel" width="100%" type="date"></td>
+			<td width="30%"><input id="id_text_birthday" width="100%" type="date"></td>
 			<td width="20%" class="background-color-td">性別</td>
-			<td width="30%"><input name="sex" type="radio" value="男" />男 <input name="sex" type="radio" value="女" />女</td>
+			<td width="30%"><input id="id_radio_sex_man" name="sex" type="radio" value="男" />男 
+			                <input id="id_radio_sex_woman" name="sex" type="radio" value="女" />女</td>
 		</tr>
 		<tr>
 			<td width="20%" class="background-color-td">職別</td>
-			<td width="30%"><input name="level" type="radio"  value="PG"/>PG <input name="level" type="radio" value="SE"/>SE<input name="level" type="radio" value="PM" />PM</td>
+			<td width="30%"><input id="id_radio_level_pg" name="level" type="radio"  value="PG"/>PG <input name="level" type="radio" value="SE"/>SE<input name="level" type="radio" value="PM" />PM</td>
 			<td width="20%" class="background-color-td">年収</td>
 			<td width="30%">
 				<select id="id_select_salary">
@@ -159,8 +176,8 @@ $(document).ready(function(){
 		<tr>
 			<td width="20%" class="background-color-td">技術スキル</td>
 			<td  colspan="3" width="80%">
-				<input type="checkbox" value="1">JAVA
-				<input type="checkbox" value="2">C
+				<input id="id_chk_skill_java" type="checkbox" value="1">JAVA
+				<input id="id_chk_skill_c" type="checkbox" value="2">C
 				<input type="checkbox" value="3">C++
 			</td>
 		</tr>
@@ -169,7 +186,7 @@ $(document).ready(function(){
 			<td  colspan="3" width="80%">
 				<input type="checkbox" name="foreign" value="1">ENGLISH
 				<input type="checkbox" name="foreign" value="2">CHINA
-				<input type="checkbox" name="foreign" value="3">JAPAN 
+				<input id="id_chk_lan_japan" type="checkbox" name="foreign" value="3">JAPAN 
 			</td>
 		</tr>
 

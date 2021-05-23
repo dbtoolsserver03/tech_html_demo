@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+h1 {
+	background: #3399cc;
+	color: #8AE7E6;
+}
+
+.button {
+    background-color: #87CEFA; 
+    width: 100px; 
+    height: 36px; 
+    color: #FFFFFF"
+}
+.button1 {border-radius: 12px;width: 90px; }
+.button1:hover {
+    background-color: white;
+    border: 2px solid #87CEFA;
+    color: #87CEFA;
+}
+.button1:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button2 {border-radius: 12px;width: 100px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  border: none;}
+.button2:hover {
+    background-color: white;
+    border: 2px solid #87CEFA;
+    color: #87CEFA;
+}
+.button2:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#pic {
+	max-width: 400px;
+	max-height: 270px
+}
+
+#pic1 {
+	max-width: 100px;
+	max-height: 150px
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>一覧画面</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script src="./js/main.js">
+</script>
+
+
+
+
+</head>
+
+<body style="background: url(img1.jpg) top left; background-size: 50%;">
+
+	<div align="right">
+		<img alt="" src="timg1.jpg" style="height: 50px; width: 50px">
+		柳&nbsp;&nbsp;<button class="button button2">ログアウト</button>
+		 <img alt="" src="timg2.jpg" style="height: 50px; width: 50px">
+	</div>
+
+	<div align="center">
+		<h1>アザラシ管理システム</h1>
+	</div>
+
+
+	<br>
+	<div>
+		<table border="1" width="100%">
+			<tr>
+				<td bgcolor="66ccff" align="center">名前</td>
+				<td><input type="text"></td>
+				<td bgcolor="66ccff" align="center">性別</td>
+				<td><input name="sex" type="radio">♂<input name="sex"
+					type="radio">♀</td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">年齢</td>
+				<td><input type="text"></td>
+				<td bgcolor="66ccff" align="center">種類</td>
+				<td><select>
+						<option value="a">アゴヒゲアザラシ</option>
+						<option value="b">ウェッデルアザラシ</option>
+						<option value="c">カニクイアザラシ</option>
+						<option value="d">カスピカイアザラシ</option>
+						<option value="d">クラカケアザラシ</option>
+						<option value="d">ゴマフアザラシ</option>
+						<option value="d">ゼニガタアザラシ</option>
+						<option value="d">タテゴトアザラシ</option>
+						<option value="d">ワモンアザラシ</option>
+				</select></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+
+	<div>
+		<table align="right">
+			<tr>
+				<td><button  style="display:none" id="detail" class="button button1" onclick="jump2();">詳細</button></td>
+				<td><button  style="display:none" id="delete" class="button button1">削除</button></td>
+				<td><button  style="display:none" id="update" class="button button1">更新</button></td>
+				<td><button id="new" class="button button1">新規</button></td>
+				<td><button id="select" class="button button1">検索</button></td>
+			</tr>
+		</table>
+
+	</div>
+	<br>
+
+
+	<div id="div1" style="display:none">
+		<table border="1" width="100%">
+			<thead>
+				<tr>
+					<th>選択</th>
+					<th>番号</th>
+					<th>名前</th>
+					<th>性別</th>
+					<th>年齢</th>
+					<th>種類</th>
+					<th>写真</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td align="center"><input id="kind1" name="kind" type="radio">
+					</td>
+					<td align="center">01</td>
+					<td align="center">大吉</td>
+					<td align="center">♂</td>
+					<td align="center">20</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><img src="a1.jpg" id="pic1"></td>
+				</tr>
+				<tr>
+					<td align="center"><input id="kind2" name="kind" type="radio">
+					</td>
+					<td align="center">02</td>
+					<td align="center">はる</td>
+					<td align="center">♀</td>
+					<td align="center">15</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><img src="a2.jpg" id="pic1"></td>
+				</tr>
+				<tr>
+					<td align="center"><input id="kind3" name="kind" type="radio">
+					</td>
+					<td align="center">03</td>
+					<td align="center">そら</td>
+					<td align="center">♀</td>
+					<td align="center">1</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><img src="a3.jpg" id="pic1"></td>
+				</tr>
+				<tr>
+					<td align="center"><input id="kind4" name="kind" type="radio">
+					</td>
+					<td align="center">04</td>
+					<td align="center">のの</td>
+					<td align="center">♂</td>
+					<td align="center">14</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><img src="a4.jpg" id="pic1"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+</body>
+</html>

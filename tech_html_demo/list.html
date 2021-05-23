@@ -44,6 +44,7 @@ $(document).ready(function(){
 		$("#id_btn_delete").addClass("btn-pink-gray");
 
 		$("#id_btn_detail").attr("disabled",true);
+		$("#id_btn_update").attr("disabled",true);
 		$("#id_btn_delete").attr("disabled",true);
 	} else {
 		$("#id_result_list").css('display','none');
@@ -81,19 +82,24 @@ $(document).ready(function(){
       
       // ボタンコントロール
 	  $("#id_btn_search").click(function(){
-		  window.location = 'list.html?userId='+paraUserIdVal+'&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  var paraCommon = '&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  window.location = 'list.html?userId='+paraUserIdVal+paraCommon;
 		});
 	  $("#id_btn_new").click(function(){
-		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=new&selectVal='+$('input:radio[name="selectRadio"]:checked').val();
+		  var paraCommon = '&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=new&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
 		});
 	  $("#id_btn_detail").click(function(){
-		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=detail&selectVal='+$('input:radio[name="selectRadio"]:checked').val();
+		  var paraCommon = '&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=detail&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
 		});
 	  $("#id_btn_update").click(function(){
-		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=update&selectVal='+$('input:radio[name="selectRadio"]:checked').val();
+		  var paraCommon = '&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=update&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
 		});
 	  $("#id_btn_delete").click(function(){
-		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=delete&selectVal='+$('input:radio[name="selectRadio"]:checked').val();
+		  var paraCommon = '&sei='+$("#id_text_sei").val()+'&mei='+$("#id_text_mei").val()+'&tel='+$("#id_text_tel").val()+'&address='+$("#id_text_address").val();
+		  window.location = 'info.html?userId='+paraUserIdVal+'&mode=delete&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
 		});
 	});
 </script>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>詳細画面</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script src="./js/main.js">
+</script>
+
+</head>
+
+
+
+<body style="background: url(img1.jpg) top left; background-size: 50%;">
+
+	<div align="right">
+		<img alt="" src="timg1.jpg" style="height: 50px; width: 50px">
+		柳&nbsp;&nbsp; <button class="button button2">ログアウト</button>
+		 <img alt="" src="timg2.jpg" style="height: 50px; width: 50px">
+	</div>
+
+	<div align="center">
+		<h1>アザラシ管理システム</h1>
+	</div>
+	<br>
+
+
+	<div>
+		<table width="70%">
+			<tr>
+				<td bgcolor="66ccff" align="center">名前</td>
+				<td><input type="text"></td>
+				<td bgcolor="66ccff" align="center">性別</td>
+				<td><input name="sex" type="radio">♂<input name="sex"
+					type="radio">♀</td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">年齢</td>
+				<td><input type="text"></td>
+				<td bgcolor="66ccff" align="center">種類</td>
+				<td><select>
+						<option value="a">アゴヒゲアザラシ</option>
+						<option value="b">ウェッデルアザラシ</option>
+						<option value="c">カニクイアザラシ</option>
+						<option value="d">カスピカイアザラシ</option>
+						<option value="d">クラカケアザラシ</option>
+						<option value="d">ゴマフアザラシ</option>
+						<option value="d">ゼニガタアザラシ</option>
+						<option value="d">タテゴトアザラシ</option>
+						<option value="d">ワモンアザラシ</option>
+				</select></td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">保護日</td>
+				<td><input type="date"></td>
+				<td bgcolor="66ccff" align="center">体重</td>
+				<td><input type="text"></td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">紹介</td>
+				<td><textarea style="width: 170px; height: 270px;" /></textarea></td>
+				<td bgcolor="66ccff" align="center">写真</td>
+				<td><img src="img2.jpg" id="pic"></td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">趣味</td>
+				<td><input type="checkbox" name="yu">イワシ<input
+					type="checkbox" name="wan">遊び<input type="checkbox"
+					name="shui">昼寝<input type="checkbox" name="you">泳ぎ
+				</td>
+			</tr>
+
+		</table>
+	</div>
+	<br>
+
+
+
+
+	<div>
+		<table align="right">
+			<tr>
+				<td><button class="button button1" onclick="jump1();">一覧へ</button></td>
+				<td><button class="button button1" onclick="jump3();">ログインへ</button></td>
+			</tr>
+		</table>
+	</div>
+
+
+
+
+</body>
+</html>
