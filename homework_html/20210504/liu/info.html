@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>詳細画面</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script src="./js/info.js">
+</script>
+
+<link rel="stylesheet" type="text/css" href="./plug-in/lightbox2-dev/dist/css/lightbox.css" />
+<script type="text/javascript" src="./plug-in/lightbox2-dev/dist/js/lightbox.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body style="background: url(img1.jpg) top left; background-size: 50%;">
+
+	<div>
+		<table>
+			<tr>
+				<td width="20%"><p id="id_user"></p></td>
+				<td width="60%"></td>
+				<td width="20%">
+					<img alt="" src="timg1.jpg" style="height: 50px; width: 50px">
+					<button class="button button2" onclick="jump3()">ログアウト</button> 
+					<img alt="" src="timg2.jpg" style="height: 50px; width: 50px">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<!-- 	<div id="id_user" align="left"></div> -->
+	
+	
+<!-- 	<div align="right"> -->
+<!-- 		<img alt="" src="timg1.jpg" style="height: 50px; width: 50px"> -->
+<!-- 		<button class="button button2" onclick="jump3()">ログアウト</button> -->
+<!-- 		<img alt="" src="timg2.jpg" style="height: 50px; width: 50px"> -->
+<!-- 	</div> -->
+
+
+	<div align="center">
+		<h1>アザラシ管理システム</h1>
+	</div>
+
+	<div id="id_info">
+		<table width="70%">
+			<tr>
+				<td bgcolor="66ccff" align="center">名前</td>
+				<td><input id="id_text_name"type="text"></td>
+				<td bgcolor="66ccff" align="center">性別</td>
+				<td><input name="sex" id="id_radio_sex1"type="radio">♂<input name="sex" id="id_radio_sex2"
+					type="radio">♀</td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">年齢</td>
+				<td><input id="id_text_age" type="text"></td>
+				<td bgcolor="66ccff" align="center">種類</td>
+				<td><select id="id_select_type">
+						<option value="a">アゴヒゲアザラシ</option>
+						<option value="b">ウェッデルアザラシ</option>
+						<option value="c">カニクイアザラシ</option>
+						<option value="d">カスピカイアザラシ</option>
+						<option value="e">クラカケアザラシ</option>
+						<option value="f">ゴマフアザラシ</option>
+
+				</select></td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">保護日</td>
+				<td><input id="id_text_date" type="date"></td>
+				<td bgcolor="66ccff" align="center">体重</td>
+				<td><input id="id_text_weight" type="text"></td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">紹介</td>
+				<td><textarea id="id_text_detail" style="width: 170px; height: 270px;" /></textarea></td>
+				<td bgcolor="66ccff" align="center">写真</td>
+				<td><a href="img2.jpg" data-lightbox="group-card"><img src="img2.jpg" id="pic"></a></td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">趣味</td>
+				<td><input id="id_chk_yu"  type="checkbox" name="yu">イワシ<input
+					id="id_chk_wan" type="checkbox" name="wan">遊び<input id="id_chk_shui" type="checkbox"
+					name="shui">昼寝<input id="id_chk_you" type="checkbox" name="you">泳ぎ
+				</td>
+			</tr>
+
+		</table>
+	</div>
+	<br>
+
+
+
+
+
+
+<div align="right">
+		<input id="id_btn_back" class="button button1" type="button" value="戻る">
+		<input id="id_btn_clear" class="button button1" type="button" value="クリア">
+		<input id="id_btn_ok" class="button button1" type="button" value="確定">
+	</div>
+
+<div class="footer">liujieru © Copyright 2021</div>
+
+</body>
+</html>

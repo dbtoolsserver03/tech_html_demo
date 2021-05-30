@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>一覧画面</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<link rel="stylesheet" type="text/css" href="./plug-in/lightbox2-dev/dist/css/lightbox.css" />
+<script type="text/javascript" src="./plug-in/lightbox2-dev/dist/js/lightbox.js"></script>
+
+<script src="./js/select.js"></script>
+
+
+
+</head>
+
+<body style="background: url(img1.jpg) top left; background-size: 50%;">
+
+
+
+	<div id="id_user" align="right"></div>
+	<div align="right">
+		<img alt="" src="timg1.jpg" style="height: 50px; width: 50px">
+		<button class="button button2" onclick="jump3()">ログアウト</button>
+		<img alt="" src="timg2.jpg" style="height: 50px; width: 50px">
+	</div>
+
+
+	<div align="center">
+		<h1>アザラシ管理システム</h1>
+	</div>
+
+
+	<br>
+	<div>
+		<table border="1" width="100%">
+			<tr>
+				<td bgcolor="66ccff" align="center">名前</td>
+				<td><input  id="id_text_name" type="text"></td>
+				<td bgcolor="66ccff" align="center">性別</td>
+				<td><input id="id_radio_sex1" name="sex" type="radio" value="1">♂
+				<input name="sex" id="id_radio_sex2"  value="2"
+					type="radio">♀</td>
+			</tr>
+
+			<tr>
+				<td bgcolor="66ccff" align="center">年齢</td>
+				<td><input id="id_text_age" type="text"></td>
+				<td bgcolor="66ccff" align="center">種類</td>
+				<td><select id="id_select_type">
+						<option value="a">アゴヒゲアザラシ</option>
+						<option value="b">ウェッデルアザラシ</option>
+						<option value="c">カニクイアザラシ</option>
+						<option value="d">カスピカイアザラシ</option>
+						<option value="e">クラカケアザラシ</option>
+						<option value="f">ゴマフアザラシ</option>
+		
+				</select></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+
+
+	
+		<div align="right">
+		<input id="detail" type="button" value="詳細">
+		<input id="delete" type="button" value="削除">
+		<input id="update" type="button" value="更新">
+		<input id="new" class="button button1" type="button" value="新規">
+		<input id="search" class="button button1" type="button" value="検索">
+		
+	</div>
+	
+	
+	
+	<br>
+
+
+	<div id="id_result_list" align="center" style="display:none">
+		<table border="1" width="100%">
+			<thead>
+				<tr>
+					<th>選択</th>
+					<th>番号</th>
+					<th>名前</th>
+					<th>性別</th>
+					<th>年齢</th>
+					<th>種類</th>
+					<th>写真</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td align="center"><input id="id_rdo_selected_1" name="kind" type="radio" value="1">
+					</td>
+					<td align="center">01</td>
+					<td align="center">大吉</td>
+					<td align="center">♂</td>
+					<td align="center">20</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><a href="a1.jpg" data-lightbox="group-card"><img src="a1.jpg" id="pic1"></a></td>
+				</tr>
+				<tr>
+					<td align="center"><input id="id_rdo_selected_2" name="kind" type="radio" value="2">
+					</td>
+					<td align="center">02</td>
+					<td align="center">はる</td>
+					<td align="center">♀</td>
+					<td align="center">15</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><a href="a2.jpg" data-lightbox="group-card"><img src="a2.jpg" id="pic1"></a></td>
+				</tr>
+				<tr>
+					<td align="center"><input id="id_rdo_selected_3" name="kind" type="radio" value="3">
+					</td>
+					<td align="center">03</td>
+					<td align="center">そら</td>
+					<td align="center">♀</td>
+					<td align="center">1</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><a href="a3.jpg" data-lightbox="group-card"><img src="a3.jpg" id="pic1"></a></td>
+				</tr>
+				<tr>
+					<td align="center"><input id="id_rdo_selected_4" name="kind" type="radio" value="4">
+					</td>
+					<td align="center">04</td>
+					<td align="center">のの</td>
+					<td align="center">♂</td>
+					<td align="center">14</td>
+					<td align="center">ゴマフアザラシ</td>
+					<td align="center" width="200px"><a href="a4.jpg" data-lightbox="group-card"><img src="a4.jpg" id="pic1" value="5"></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+<div class="footer">liujieru © Copyright 2021</div>
+
+</body>
+</html>

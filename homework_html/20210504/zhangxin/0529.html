@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=utf-8">
+<title>登录</title>
+<style>
+
+ #a {
+
+    width:50%;
+    height:200px;
+    border: 1px dashed ;
+    background-color:lightyellow;
+    text-align:center;
+}
+body{
+background-color:lightblue;
+}
+</style>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	  $("#id_my_btn").click(function(){
+		  debugger;
+		  var userId = $("#id_user_id")[0].value;
+		  window.location = '05291.html?userId='+userId+'&result=notView';
+
+	  });
+	});
+
+</script>
+
+</head>
+<body>
+<div class="align-right">
+<a href="#">ユーザ新規</a>
+<br>
+</div>
+<div align="center">
+<h1>管理ログイン画面</h1>
+
+ログインID:<input id="id_user_id" type="text" name="id"/>
+<br>
+パスワード:<input type="password"name="password"/>
+<div>
+		 <br><br>
+    <input id="id_my_btn" type="button"  class="btn-pink"  value="  ログイン  " />
+</div>
+</form>
+</div>
+</body>
+</html>
