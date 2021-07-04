@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+<body style="background: url() top left; background-size: 100%;">
+<head>
+<meta charset="UTF-8">
+<title>留学生管理情報</title>
+
+
+<style >
+.background-color {
+	background-color: CornflowerBlue;
+	    color: white;
+}
+
+.btn-pink {
+	background-color: HotPink;
+	color: white;
+	width: 100px;
+}
+</style>
+</head>
+<body>
+<div>
+	<table width="100%">
+		<tr>
+			<td width="20%" class="background-color-td">姓</td>
+			<td width="30%"><input id="id_text_sei" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">名</td>
+			<td width="30%"><input id="id_text_mei" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">電話番号</td>
+			<td width="30%"><input id="id_text_tel" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">住所</td>
+			<td width="30%"><input id="id_text_address" width="100%" type="text"></td>
+		</tr>
+
+	</table>
+</div>
+	<div align="right">
+	<a href="to4.html"><button class="btn-pink">詳細</button></a>
+    <a href="to4.html"><button class="btn-pink">消除</button></a>
+	<input id="id_btn_update" type="button" value="更新">
+    <a href="to4.html"> <button>新規</button></a>
+    <a href="to4.html"><button>検索</button></a>
+
+
+	</div>
+	<div id="id_result_list" align="center">
+		<table width="100%" border="1">
+			<tr>
+				<th class="background-color" width="4%">選択</th>
+				<th class="background-color" width="4%">番号</th>
+				<th class="background-color" width="10%">姓</th>
+				<th class="background-color" width="10%">名</th>
+				<th class="background-color" width="20%">生年月日</th>
+				<th class="background-color" width="15%">携帯番号</th>
+				<th class="background-color" width="*%">住所</th>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_1" name="selectRadio" type="radio" value="1"></td>
+				<td align="right">01</td>
+				<td>小强</td>
+				<td>1</td>
+				<td align="center">1991/01/01</td>
+
+				<td align="center">080-0001-0001</td>
+				<td>東京都豊島区3-1-1</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_2" name="selectRadio" type="radio" value="2"></td>
+				<td align="right">02</td>
+				<td>小王</td>
+				<td>2</td>
+				<td align="center">1995/01/11</td>
+
+				<td align="center">080-0001-0002</td>
+				<td>東京都台東区3-1-2</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_3" name="selectRadio" type="radio" value="3"></td>
+				<td align="right">03</td>
+				<td>小明</td>
+				<td>3</td>
+				<td align="center">1996/11/03</td>
+
+				<td align="center">080-0001-0003</td>
+				<td>東京都新宿区２-1-3</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_4" name="selectRadio" type="radio" value="4"></td>
+				<td align="right">04</td>
+				<td>小刚</td>
+				<td>4</td>
+				<td align="center">1998/04/09</td>
+
+				<td align="center">080-0001-0004</td>
+				<td>東京都上野区3-1-4</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_5" name="selectRadio" type="radio" value="5"></td>
+				<td align="right">05</td>
+				<td>小缪</td>
+				<td>5</td>
+				<td align="center">1999/07/05</td>
+
+				<td align="center">080-0001-0005</td>
+				<td>東京都豊島区１-1-5</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_6" name="selectRadio" type="radio" value="6"></td>
+				<td align="right">06</td>
+				<td>小丽</td>
+				<td>6</td>
+				<td align="center">1992/10-/01</td>
+
+				<td align="center">080-0001-0006</td>
+				<td>東京都上野区3-1-6</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_7" name="selectRadio" type="radio" value="7"></td>
+				<td align="right">07</td>
+				<td>小李</td>
+				<td>7</td>
+				<td align="center">1998/01/07</td>
+
+				<td align="center">080-0001-0007</td>
+				<td>東京都台東区3-1-7</td>
+			</tr>
+			<tr>
+				<td align="center"><input id="id_rdo_selected_8" name="selectRadio" type="radio" value="8"></td>
+				<td align="right">08</td>
+				<td>小智</td>
+				<td>8</td>
+				<td align="center">1993/11/08</td>
+
+				<td align="center">080-0001-0008</td>
+				<td>東京都新宿区1-1-8</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>宿題</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("#id_test_jquery").click(function(){
+	  $("#id_content").html($("[type='text']").val() + "--" + $("[type='password']").val());
+  });
+});
+
+</script>
+
+
+</head>
+<style >
+#header {
+    background-color:gray;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+#section {
+    margin-top:4px;
+    margin-left:400px;
+    }
+
+</style>
+<body"background:002.jpg top left; background-size: 100%;">
+<div id="header">
+<h1><img width="80" height="60" src="001.jpg"/> 反斗联盟官方网站</h1>
+
+</div>
+<br>
+
+<input type="text" placeholder="用户名">
+<input type="text" placeholder="用户名xxx">
+<br>
+<input type="password" placeholder="密码">
+<br>
+<input type="button" value="登录">
+
+<div id="section">
+<img width="600" height="400"  src="002.jpg">
+</div>
+
+<div>
+
+<input id="id_test_jquery" type="button" value="test">
+
+</div>>
+
+<div id="id_content">
+xxxxxxx
+</div>>
+
+</body>
+</html>

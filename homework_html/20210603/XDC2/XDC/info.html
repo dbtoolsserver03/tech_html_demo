@@ -54,7 +54,6 @@ $(document).ready(function(){
 	
 	if ("new" != paraModeVal) {
 
-		debugger;
 		$("#id_text_sei").val("zhang");
 		$("#id_text_mei").val(paraSelectVal);
 		$("#id_text_tel").val("080-0001-000"+paraSelectVal);
@@ -118,14 +117,14 @@ $(document).ready(function(){
 <div id="id_user_id" class="align-right">
 
 </div>
-<div class="background-color">
+<div style="background:#ffdb7a">
     <table width="100%">
         <tr>
             <td width="5%"></td>
             <td width="20%">
                 <div align="right"><img src="./images/logo.png"/></div>
             </td>
-            <td width="50%"><p align="center" style="color:white">人事システム</p></td>
+            <td width="50%"><p align="center" style="color:white">在庫管理システム</p></td>
             <td align="right" width="25%"><a href="login.html" style="color: white;font-size: 12px">ログアウト</a></td>
         </tr>
     </table>
@@ -134,34 +133,34 @@ $(document).ready(function(){
 <div id="id_info">
 	<table width="100%">
 		<tr>
-			<td width="20%" class="background-color-td">免許正面</td>
-			<td width="30%" class="imgWrap"><a href="images/cart-front.png" data-lightbox="group-card"><img src="images/cart-front.png" width="258" height="120" /></a></td>
-			<td width="20%" class="background-color-td">免許裏面</td>
-			<td width="30%" class="imgWrap"><a href="images/cart-back.png" data-lightbox="group-card"><img src="images/cart-back.png" width="258" height="120" /></a></td>
+			<td width="20%" style="background:#ffdb7a">商品正面</td>
+			<td width="30%" style="background:#ffdb7a"><a href="images/game.png" data-lightbox="group-card"><img src="images/game.png" width="258" height="120" /></a></td>
+			<td width="20%" style="background:#ffdb7a">商品裏面</td>
+			<td width="30%" style="background:#ffdb7a"><a href="images/game.png" data-lightbox="group-card"><img src="images/game.png" width="258" height="120" /></a></td>
 		</tr>
 		<tr>
-			<td width="20%" class="background-color-td">姓</td>
+			<td width="20%" style="background:#ffdb7a">ゲーム名</td>
 			<td width="30%"><input id="id_text_sei" width="100%" type="text"></td>
-			<td width="20%" class="background-color-td">名</td>
+			<td width="20%" style="background:#ffdb7a">製作会社</td>
 			<td width="30%"><input id="id_text_mei" width="100%" type="text"></td>
 		</tr>
 		<tr>
-			<td width="20%" class="background-color-td">電話番号</td>
+			<td width="20%" style="background:#ffdb7a">発売日</td>
 			<td width="30%"><input id="id_text_tel" width="100%" type="text"></td>
-			<td width="20%" class="background-color-td">住所</td>
+			<td width="20%" style="background:#ffdb7a">在庫量</td>
 			<td width="30%"><input id="id_text_address" width="100%" type="text"></td>
 		</tr>
 		<tr>
-			<td width="20%" class="background-color-td">生年月日</td>
+			<td width="20%" style="background:#ffdb7a">備考欄</td>
 			<td width="30%"><input id="id_text_birthday" width="100%" type="date"></td>
-			<td width="20%" class="background-color-td">性別</td>
-			<td width="30%"><input id="id_radio_sex_man" name="sex" type="radio" value="男" />男 
-			                <input id="id_radio_sex_woman" name="sex" type="radio" value="女" />女</td>
+			<td width="20%" style="background:#ffdb7a">中古回収</td>
+			<td width="30%"><input id="id_radio_sex_man" name="sex" type="radio" value="男" />あり 
+			                <input id="id_radio_sex_woman" name="sex" type="radio" value="女" />なし</td>
 		</tr>
 		<tr>
-			<td width="20%" class="background-color-td">職別</td>
-			<td width="30%"><input id="id_radio_level_pg" name="level" type="radio"  value="PG"/>PG <input name="level" type="radio" value="SE"/>SE<input name="level" type="radio" value="PM" />PM</td>
-			<td width="20%" class="background-color-td">年収</td>
+			<td width="20%" style="background:#ffdb7a">年齢制限</td>
+			<td width="30%"><input id="id_radio_level_pg" name="level" type="radio"  value="PG"/>全年齢 <input name="level" type="radio" value="SE"/>12+<input name="level" type="radio" value="PM" />18+</td>
+			<td width="20%" style="background:#ffdb7a">売上</td>
 			<td width="30%">
 				<select id="id_select_salary">
 					<option value="z" selected="selected"></option>
@@ -174,19 +173,19 @@ $(document).ready(function(){
 			</td>
 		</tr>
 		<tr>
-			<td width="20%" class="background-color-td">技術スキル</td>
+			<td width="20%" style="background:#ffdb7a">ゲームタイプ</td>
 			<td  colspan="3" width="80%">
-				<input id="id_chk_skill_java" type="checkbox" value="1">JAVA
-				<input id="id_chk_skill_c" type="checkbox" value="2">C
-				<input type="checkbox" value="3">C++
+				<input id="id_chk_skill_java" type="checkbox" value="1">ACT
+				<input id="id_chk_skill_c" type="checkbox" value="2">FPS
+				<input type="checkbox" value="3">RPG
 			</td>
 		</tr>
 		<tr>
-			<td width="20%" class="background-color-td">外国語</td>
+			<td width="20%" style="background:#ffdb7a">言語</td>
 			<td  colspan="3" width="80%">
-				<input type="checkbox" name="foreign" value="1">ENGLISH
-				<input type="checkbox" name="foreign" value="2">CHINA
-				<input id="id_chk_lan_japan" type="checkbox" name="foreign" value="3">JAPAN 
+				<input type="checkbox" name="foreign" value="1">英語
+				<input type="checkbox" name="foreign" value="2">日本語
+				<input id="id_chk_lan_japan" type="checkbox" name="foreign" value="3">中国語 
 			</td>
 		</tr>
 
@@ -194,9 +193,9 @@ $(document).ready(function(){
 
 </div>
 	<div align="right">
-		<input id="id_btn_back" class="btn-pink" type="button" value="戻る">
-		<input id="id_btn_clear" class="btn-pink" type="button" value="クリア">
-		<input id="id_btn_ok" class="btn-pink" type="button" value="確定">
+		<input id="id_btn_back" style="width: 150px;height: 30px;background: #ffdb7a;font-size: 20px;color: white;cursor: pointer;border-radius: 150px" type="button" value="戻る">
+		<input id="id_btn_clear" style="width: 150px;height: 30px;background: #ffdb7a;font-size: 20px;color: white;cursor: pointer;border-radius: 150px" type="button" value="クリア">
+		<input id="id_btn_ok" style="width: 150px;height: 30px;background: #ffdb7a;font-size: 20px;color: white;cursor: pointer;border-radius: 150px" type="button" value="確定">
 	</div>
 	<div class="footer">cuishuangjia © Copyright 2021</div>
 

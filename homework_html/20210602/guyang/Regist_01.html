@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ウマ娘データ</title>
+<script>
+//Dom
+	function output(){
+		document.getElementById("check").value="名前："+document.getElementById("name").value+"\n"
+											+"二つ名："+document.getElementById("nick_name").value+"\n"
+											+"誕生日："+document.getElementById("birthday").value+"\n"
+											+"CV："+document.getElementById("cv").value+"\n"
+											+"スリーサイズ：B"+document.getElementById("ts_b").value+" W"+document.getElementById("ts_w").value+" H"+document.getElementById("ts_h").value+"\n"
+											+"身長："+document.getElementById("height").value+"\n"
+											+"バ場適正：芝"+document.getElementById("grass").value+" ダート"+document.getElementById("dirt").value+"\n"
+											+"距離適性：短距離"+document.getElementById("short").value+" マイル"+document.getElementById("mile").value+" 中距離"+document.getElementById("middle").value+" 長距離"+document.getElementById("long").value+"\n"
+											+"脚質適性：逃げ"+document.getElementById("fr").value+" 先行"+document.getElementById("stalker").value+" 差し"+document.getElementById("sotp").value+" 追込"+document.getElementById("offer").value+"\n"
+;	}
+</script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="./js/output.js"></script>
+</head>
+<body style="background-color:lightgreen">
+
+<div style="text-align:right">
+	トレーナー
+</div>
+
+<div style="background-color: whitesmoke; text-align:center;">
+	<br><h2>ウマ娘管理システム</h2><br>
+</div>
+
+<div>
+	<table width=100% style="text-align:left;">
+		<tr>
+			<td style="background-color: springgreen;" width=10%>制服</td>
+			<td><img src="https://umamusume.jp/app/wp-content/uploads/2021/01/ea0b549f61f5b67967fb8a1bc695a47e.png" alt="スペシャルウィーク 制服" height=200></td>
+			<td style="background-color: springgreen;" width=10%>勝負服</td>
+			<td><img src="https://umamusume.jp/app/wp-content/uploads/2021/01/b49c5f7759b5b08e5cc5f7e8f3e0dac9.png" alt="スペシャルウィーク 勝負服" height=200></td>
+			<td style="background-color: springgreen;" width=10%>原案</td>
+			<td><img src="https://umamusume.jp/app/wp-content/uploads/2021/01/9263af4d23365c7a1ff8717fe9641847.png" alt="スペシャルウィーク 原案" height=200></td>
+			<td style="background-color: springgreen;" width=10%>原型</td>
+			<td><img src="https://www.sponichi.co.jp/gamble/news/2018/04/27/jpeg/20180427s00004000247000p_view.jpg" alt="スペシャルウィーク 原型" height=200></td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">名前</td>
+			<td><input id="name" width="100%" type="text" value="スペシャルウィーク" disabled></td>
+			<td style="background-color: springgreen;" width="10%">二つ名</td>
+			<td><input id="nick_name" width="100%" type="text" value="スペシャルドリーマー" disabled></td>
+			<td style="background-color: springgreen;" width="10%">誕生日</td>
+			<td><input id="birthday" width="100%" type="date" value="1995-05-02" disabled></td>
+			<td style="background-color: springgreen;" width="10%">CV</td>
+			<td><input id="cv" width="100%" type="text" value="和気あず未" disabled></td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">スリーサイズ：B</td>
+			<td><input id="ts_b" width="100%" type="text" value="81" disabled></td>
+			<td style="background-color: springgreen;" width="10%">W</td>
+			<td><input id="ts_w" width="100%" type="text" value="56" disabled></td>
+			<td style="background-color: springgreen;" width="10%">H</td>
+			<td><input id="ts_h" width="100%" type="text" value="81" disabled></td>
+			<td style="background-color: springgreen;" width="10%">身長</td>
+			<td><input id="height" width="100%" type="text" value="158" >cm</td>
+		</tr>
+	</table>
+	
+	<table width=50% style="text-align:left;">
+		<tr>
+			<td style="background-color: springgreen;" width="10%">バ場適正</td>
+			<td width="10%">芝</td>
+			<td width="10%">
+				<select id="grass" disabled>
+					<option value="z"></option>
+					<option value="a" selected="selected">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">ダート</td>
+			<td width="10%">
+				<select id="dirt" disabled>
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g" selected="selected">G</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">距離適正</td>
+			<td width="10%">短距離</td>
+			<td width="10%">
+				<select id="short" disabled>
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f" selected="selected">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">マイル</td>
+			<td width="10%">
+				<select id="mile" disabled>
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c" selected="selected">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+			<td width="10%">中距離</td>
+			<td width="10%">
+				<select id="middle" disabled>
+					<option value="z"></option>
+					<option value="a" selected="selected">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">長距離</td>
+			<td width="10%">
+				<select id="long" disabled>
+					<option value="z"></option>
+					<option value="a" selected="selected">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">脚質適正</td>
+			<td width="10%">逃げ</td>
+			<td width="10%">
+				<select id="fr" disabled>
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g" selected="selected">G</option>
+				</select> 
+			</td>
+			<td width="10%">先行</td>
+			<td width="10%">
+				<select id="stalker" disabled>
+					<option value="z"></option>
+					<option value="a" selected="selected">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+			<td width="10%">差し</td>
+			<td width="10%">
+				<select id="sotp" disabled>
+					<option value="z"></option>
+					<option value="a" selected="selected">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">追込み</td>
+			<td width="10%">
+				<select id="offer" disabled>
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c" selected="selected">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div>
+	<input id="test" type="button" value="test DOM" onclick="output()">
+	<input id="testj" type="button" value="test JQuery">
+</div>
+<div id="id_content">
+	<textarea id="check" cols="100" rows="10"></textarea>
+</div>
+</body>
+</html>

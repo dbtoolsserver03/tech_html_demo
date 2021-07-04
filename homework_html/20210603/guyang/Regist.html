@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ウマ娘データ</title>
+<script>
+//Dom
+	function output(){
+		document.getElementById("check").value="名前："+document.getElementById("name").value+"\n"
+											+"二つ名："+document.getElementById("nick_name").value+"\n"
+											+"誕生日："+document.getElementById("birthday").value+"\n"
+											+"CV："+document.getElementById("cv").value+"\n"
+											+"スリーサイズ：B"+document.getElementById("ts_b").value+" W"+document.getElementById("ts_w").value+" H"+document.getElementById("ts_h").value+"\n"
+											+"身長："+document.getElementById("height").value+"\n"
+											+"バ場適正：芝"+document.getElementById("grass").value+" ダート"+document.getElementById("dirt").value+"\n"
+											+"距離適性：短距離"+document.getElementById("short").value+" マイル"+document.getElementById("mile").value+" 中距離"+document.getElementById("middle").value+" 長距離"+document.getElementById("long").value+"\n"
+											+"脚質適性：逃げ"+document.getElementById("fr").value+" 先行"+document.getElementById("stalker").value+" 差し"+document.getElementById("sotp").value+" 追込"+document.getElementById("offer").value+"\n"
+;	}
+</script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="./js/output.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<script type="text/javascript" src="./plug-in/lightbox2-dev/dist/js/lightbox.js"></script>
+
+<script>
+
+function setReadOnly() {
+	$("#id_info").find("*").each(function(){
+		$(this).attr("disabled",true);
+		}
+	);
+}
+$(document).ready(function(){
+	String.prototype.getQuery = function(name){
+	    var reg = new RegExp("(^|&)"+ name+"=([^&]*)(&|$)");
+	    var r = this.substr(this.indexOf("?")+1).match(reg);
+	    if(r!=null) return decodeURIComponent(r[2]); 
+	    return null;
+	}
+	var str = location.search;
+	var paraUserIdVal = str.getQuery("userId");
+	$("#id_user").text(paraUserIdVal);
+	var paraSelectVal = str.getQuery("selectVal");
+	var paraModeVal = str.getQuery("mode");
+	
+	var type = "";
+	if("new" == paraModeVal) {
+		type = "新規";
+	} else if("detail" == paraModeVal) {
+		type = "詳細";
+		$("#id_btn_clear").addClass("btn-pink-display-none");
+		$("#id_btn_ok").addClass("btn-pink-display-none");
+		setReadOnly();
+	} else if("update" == paraModeVal) {
+		type = "更新";
+		
+	} else if("delete" == paraModeVal) {
+		type = "削除";
+		$("#id_btn_clear").addClass("btn-pink-display-none");
+		setReadOnly();
+	}
+	
+	if ("new" != paraModeVal) {
+		if("1" == paraSelectVal){
+			$("#name").val("スペシャルウィーク");
+			$("#nick_name").val("日本の総大将");
+			$("#birthday").val("1995-05-02");
+			$("#cv").val("和気あず未");
+			$("#ts_b").val("81");
+			$("#ts_w").val("56");
+			$("#ts_h").val("81");
+			$("#height").val("158");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][7].selected = true;
+			$("#short")[0][6].selected = true;
+			$("#mile")[0][2].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][1].selected = true;
+			$("#fr")[0][7].selected = true;
+			$("#stalker")[0][1].selected = true;
+			$("#sotp")[0][1].selected = true;
+			$("#offer")[0][3].selected = true;
+		}else if("2" == paraSelectVal){
+			$("#name").val("サイレンススズカ");
+			$("#nick_name").val("異次元の逃亡者");
+			$("#birthday").val("1994-05-01");
+			$("#cv").val("高野麻里佳");
+			$("#ts_b").val("70");
+			$("#ts_w").val("53");
+			$("#ts_h").val("79");
+			$("#height").val("161");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][7].selected = true;
+			$("#short")[0][4].selected = true;
+			$("#mile")[0][1].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][5].selected = true;
+			$("#fr")[0][1].selected = true;
+			$("#stalker")[0][3].selected = true;
+			$("#sotp")[0][5].selected = true;
+			$("#offer")[0][7].selected = true;
+		}else if("3" == paraSelectVal){
+			$("#name").val("トウカイテイオー");
+			$("#nick_name").val("帝王");
+			$("#birthday").val("1988-04-20");
+			$("#cv").val("Machico");
+			$("#ts_b").val("77");
+			$("#ts_w").val("54");
+			$("#ts_h").val("76");
+			$("#height").val("150");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][7].selected = true;
+			$("#short")[0][6].selected = true;
+			$("#mile")[0][5].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][2].selected = true;
+			$("#fr")[0][4].selected = true;
+			$("#stalker")[0][1].selected = true;
+			$("#sotp")[0][3].selected = true;
+			$("#offer")[0][5].selected = true;
+		}else if("4" == paraSelectVal){
+			$("#name").val("メジロマックイーン");
+			$("#nick_name").val("名優");
+			$("#birthday").val("1989-04-03");
+			$("#cv").val("大西沙織");
+			$("#ts_b").val("71");
+			$("#ts_w").val("54");
+			$("#ts_h").val("76");
+			$("#height").val("159");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][5].selected = true;
+			$("#short")[0][7].selected = true;
+			$("#mile")[0][5].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][1].selected = true;
+			$("#fr")[0][1].selected = true;
+			$("#stalker")[0][1].selected = true;
+			$("#sotp")[0][3].selected = true;
+			$("#offer")[0][6].selected = true;
+		}else if("5" == paraSelectVal){
+			$("#name").val("ゴールドシップ");
+			$("#nick_name").val("破天荒");
+			$("#birthday").val("2009-03-06");
+			$("#cv").val("上田瞳");
+			$("#ts_b").val("88");
+			$("#ts_w").val("55");
+			$("#ts_h").val("88");
+			$("#height").val("170");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][7].selected = true;
+			$("#short")[0][7].selected = true;
+			$("#mile")[0][3].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][1].selected = true;
+			$("#fr")[0][7].selected = true;
+			$("#stalker")[0][2].selected = true;
+			$("#sotp")[0][2].selected = true;
+			$("#offer")[0][1].selected = true;
+		}else if("6" == paraSelectVal){
+			$("#name").val("ウオッカ");
+			$("#nick_name").val("常識破りの女帝");
+			$("#birthday").val("2004-04-04");
+			$("#cv").val("大橋彩香");
+			$("#ts_b").val("76");
+			$("#ts_w").val("55");
+			$("#ts_h").val("78");
+			$("#height").val("165");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][7].selected = true;
+			$("#short")[0][6].selected = true;
+			$("#mile")[0][1].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][6].selected = true;
+			$("#fr")[0][3].selected = true;
+			$("#stalker")[0][2].selected = true;
+			$("#sotp")[0][1].selected = true;
+			$("#offer")[0][6].selected = true;
+		}else if("7" == paraSelectVal){
+			$("#name").val("ダイワスカーレット");
+			$("#nick_name").val("ミスパーフェクト");
+			$("#birthday").val("2004-05-13");
+			$("#cv").val("木村千咲");
+			$("#ts_b").val("90");
+			$("#ts_w").val("56");
+			$("#ts_h").val("82");
+			$("#height").val("163");
+			$("#grass")[0][1].selected = true;
+			$("#dirt")[0][7].selected = true;
+			$("#short")[0][6].selected = true;
+			$("#mile")[0][1].selected = true;
+			$("#middle")[0][1].selected = true;
+			$("#long")[0][2].selected = true;
+			$("#fr")[0][1].selected = true;
+			$("#stalker")[0][1].selected = true;
+			$("#sotp")[0][5].selected = true;
+			$("#offer")[0][7].selected = true;
+		}
+	}
+	$('title').text('ウマ娘情報'+type);
+	
+	  $("#id_btn_back").click(function(){
+		  var paraSelectVal = str.getQuery("selectVal");
+		  var paraName = str.getQuery("name");
+		  window.location = 'Search.html?userId='+paraUserIdVal+'&selectVal='+paraSelectVal+'&name='+paraName;
+			
+	  });
+	  $("#id_btn_clear").click(function(){
+		$("#grass")[0][0].selected = true;
+		$("#dirt")[0][0].selected = true;
+		$("#short")[0][0].selected = true;
+		$("#mile")[0][0].selected = true;
+		$("#middle")[0][0].selected = true;
+		$("#long")[0][0].selected = true;
+		$("#fr")[0][0].selected = true;
+		$("#stalker")[0][0].selected = true;
+		$("#sotp")[0][0].selected = true;
+		$("#offer")[0][0].selected = true;
+		
+		$("input[type='text'],[type='date']").each(function(){
+				$(this).val("");
+				}
+			);
+		  $("input[type='checkbox']").each(function(){
+				$(this).prop("checked",false);
+				}
+			);
+		  $("input[type='radio']").each(function(){
+				$(this).prop("checked",false);
+				}
+			);
+	  });
+	  
+	  $("#id_btn_ok").click(function(){
+		  if(confirm(type + "処理を行います。")){
+			  window.location = 'Search.html?userId='+paraUserIdVal+'&result=notView';
+		  }
+	  });
+	});
+	
+</script>
+</head>
+<body style="background-color:lightgreen">
+
+<div id="id_user" style="text-align:right"></div>
+
+<div class="header">
+	<br><h2>ウマ娘管理システム</h2><br>
+</div>
+
+<div id="id_info">
+	<table width=100% style="text-align:left;">
+		<tr>
+			<td style="background-color: springgreen;" width=10%>制服</td>
+			<td><img src="https://umamusume.jp/app/wp-content/uploads/2021/01/ea0b549f61f5b67967fb8a1bc695a47e.png" alt="スペシャルウィーク 制服" height=200></td>
+			<td style="background-color: springgreen;" width=10%>勝負服</td>
+			<td><img src="https://umamusume.jp/app/wp-content/uploads/2021/01/b49c5f7759b5b08e5cc5f7e8f3e0dac9.png" alt="スペシャルウィーク 勝負服" height=200></td>
+			<td style="background-color: springgreen;" width=10%>原案</td>
+			<td><img src="https://umamusume.jp/app/wp-content/uploads/2021/01/9263af4d23365c7a1ff8717fe9641847.png" alt="スペシャルウィーク 原案" height=200></td>
+			<td style="background-color: springgreen;" width=10%>原型</td>
+			<td><img src="https://www.sponichi.co.jp/gamble/news/2018/04/27/jpeg/20180427s00004000247000p_view.jpg" alt="スペシャルウィーク 原型" height=200></td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">名前</td>
+			<td><input id="name" style="width:100%; box-sizing:border-box;" type="text"></td>
+			<td style="background-color: springgreen;" width="10%">二つ名</td>
+			<td><input id="nick_name" style="width:100%; box-sizing:border-box;" type="text"></td>
+			<td style="background-color: springgreen;" width="10%">誕生日</td>
+			<td><input id="birthday" style="width:100%; box-sizing:border-box;" type="date"></td>
+			<td style="background-color: springgreen;" width="10%">CV</td>
+			<td><input id="cv" style="width:100%; box-sizing:border-box;" type="text"></td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">スリーサイズ：B</td>
+			<td><input id="ts_b" style="width:100%; box-sizing:border-box;" type="text"></td>
+			<td style="background-color: springgreen;">W</td>
+			<td><input id="ts_w" style="width:100%; box-sizing:border-box;" type="text"></td>
+			<td style="background-color: springgreen;" width="10%">H</td>
+			<td><input id="ts_h" style="width:100%; box-sizing:border-box;" type="text"></td>
+			<td style="background-color: springgreen;" width="10%">身長</td>
+			<td><input id="height" style="width:90%; box-sizing:border-box;" type="text">cm</td>
+		</tr>
+	</table>
+	
+	<table width=50% style="text-align:left;">
+		<tr>
+			<td style="background-color: springgreen;" width="10%">バ場適正</td>
+			<td width="10%">芝</td>
+			<td width="10%">
+				<select id="grass">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">ダート</td>
+			<td width="10%">
+				<select id="dirt">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">距離適正</td>
+			<td width="10%">短距離</td>
+			<td width="10%">
+				<select id="short">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">マイル</td>
+			<td width="10%">
+				<select id="mile">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+			<td width="10%">中距離</td>
+			<td width="10%">
+				<select id="middle">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">長距離</td>
+			<td width="10%">
+				<select id="long">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width="10%">脚質適正</td>
+			<td width="10%">逃げ</td>
+			<td width="10%">
+				<select id="fr">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">先行</td>
+			<td width="10%">
+				<select id="stalker">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+			<td width="10%">差し</td>
+			<td width="10%">
+				<select id="sotp">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select> 
+			</td>
+			<td width="10%">追込み</td>
+			<td width="10%">
+				<select id="offer">
+					<option value="z"></option>
+					<option value="a">A</option>
+					<option value="b">B</option>
+					<option value="c">C</option>
+					<option value="d">D</option>
+					<option value="e">E</option>
+					<option value="f">F</option>
+					<option value="g">G</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div align="right">
+		<input id="id_btn_back" class="btn-pink" type="button" value="戻る">
+		<input id="id_btn_clear" class="btn-pink" type="button" value="クリア">
+		<input id="id_btn_ok" class="btn-pink" type="button" value="確定">
+</div>
+<div>
+	<input id="test" type="button" value="test DOM" onclick="output()">
+	<input id="testj" type="button" value="test JQuery">
+</div>
+<div id="id_content">
+	<textarea id="check" cols="100" rows="8"></textarea>
+</div>
+</body>
+</html>

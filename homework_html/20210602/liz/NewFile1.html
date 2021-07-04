@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>宿題</title>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+
+$(document).ready(function(){
+  $("#id_btn").click(function(){
+		debugger;
+	  var tmpVal = $("#id_no").val();
+	       
+	  $("#id_textarea").val(tmpVal);
+  });
+});
+</script>
+
+
+
+<body style=background-color:grey>
+	<div>
+		<h1 align="center">欢迎来到反斗联盟官方注册网站</h1>
+		<p align="center">
+			在这里您将结识志同道合的伙伴，并且与伙伴们进行冒险。
+			<br>
+			欢迎注册反斗联盟，让我们展开冒险吧!
+		</p>
+		<table align="center" border="0">
+			<tr>
+				<td>姓：</td> 
+				<td><input type="text"></td>
+				<td>名：</td>
+				<td><input type="text"></td>
+			</tr>
+				<td>身份证号码：</td>
+				<td><input type="text" id="id_no"></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>注册日期：</td>
+				<td><input type="date"></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>性別：</td>
+				<td colspan="3"><input name="sex" type="radio">男<input name="sex" type="radio">女</td>
+			</tr>
+			<tr>
+				<td>选择大区：</td>
+				<td colspan="3">
+					<input name="level" type="radio">起始之地
+					<input name="level" type="radio">逆转未来
+					<input name="level" type="radio">荣耀一战
+				</td>
+				
+			</tr>
+			<tr>
+				<td>角色选择： </td>
+				<td>
+					<select>
+						<option value="a">骑士</option>
+						<option value="b">枪手</option>
+						<option value="c">剑士</option>
+						<option value="e">吸血鬼</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>阵营选择：</td>
+				<td colspan="3">
+					<input type="checkbox" value="1">未来学社
+					<input type="checkbox" value="2">光辉之城
+					<input type="checkbox" value="3">死亡圣殿
+				</td>
+			</tr>
+		</table>
+		<br>
+		<p align="center">
+			如若您之前玩过类似游戏，请写在下方框内： <br>
+			<textarea id="id_textarea" rows="5" cols="50"></textarea>
+			<br> <input align="center" id="id_btn" type="button"  value="test"  >
+		</p>
+	</div>
+</div>
+
+</body>
+
+
+</html>

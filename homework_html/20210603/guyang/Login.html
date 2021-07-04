@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ログイン画面</title>
+
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	  $("#id_login").click(function(){
+		  debugger;
+		  var userId = $("#id_user")[0].value;
+		  window.location = 'Search.html?userId='+userId+'&result=notView';
+
+	  });
+	});
+
+</script>
+</head>
+<body style="background-color:lightgreen">
+
+<div style="text-align:right">
+	<a href="">ユーザ新規</a>
+</div>
+
+<div class="header">
+	<br><h2>ウマ娘管理システム</h2><br>
+</div>
+
+<div class="form">
+	<br><input type="text" name="id" id="id_user" value="" placeholder="ログインID">
+	<br><input type="password" name="pass" id="id_pass" value="" placeholder="パスワード">
+	<br>
+	<br><input type="submit" style="width:10%;" id="id_login" value="ログイン">
+</div>
+</body>
+</html>

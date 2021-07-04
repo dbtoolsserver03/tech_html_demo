@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ウマ娘一覧</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	
+	debugger;
+	String.prototype.getQuery = function(name)
+	{
+	    var reg = new RegExp("(^|&)"+ name+"=([^&]*)(&|$)");
+	    var r = this.substr(this.indexOf("?")+1).match(reg);
+	    if(r!=null) return decodeURIComponent(r[2]); 
+	    return null;
+	}
+	var str = location.search;
+	var paraUserIdVal = str.getQuery("userId");
+	$("#id_user").text(paraUserIdVal);
+	var paraResultVal = str.getQuery("result");
+	var paraNameVal = str.getQuery("name");
+	var paraNickNameVal = str.getQuery("nick_name");
+	var paraBirthVal = str.getQuery("birth");
+	var paraCVVal = str.getQuery("cv");
+	var paraSelectVal = str.getQuery("selectVal");
+
+	if("notView" == paraResultVal){
+		$("#id_result_list").css('display','none');
+		$("#id_btn_detail").addClass("btn-pink-display-none");
+		$("#id_btn_update").addClass("btn-pink-display-none");
+		$("#id_btn_delete").addClass("btn-pink-display-none");
+
+	} else if("" == paraNameVal) {
+		$("#id_result_list").css('display','block');
+		$("#id_btn_detail").addClass("btn-pink-gray");
+		$("#id_btn_update").addClass("btn-pink-gray");
+		$("#id_btn_delete").addClass("btn-pink-gray");
+
+		$("#id_btn_detail").attr("disabled",true);
+		$("#id_btn_update").attr("disabled",true);
+		$("#id_btn_delete").attr("disabled",true);
+	} else {
+		$("#id_result_list").css('display','none');
+		$("#id_btn_detail").addClass("btn-pink-display-none");
+		$("#id_btn_update").addClass("btn-pink-display-none");
+		$("#id_btn_delete").addClass("btn-pink-display-none");
+	}
+	if(paraSelectVal != null && paraSelectVal != "") {
+  	  $("#id_btn_detail")[0].className="btn-pink";
+	  $("#id_btn_update")[0].className="btn-pink";
+	  $("#id_btn_delete")[0].className="btn-pink";
+		$("#id_btn_detail").attr("disabled",false);
+		$("#id_btn_update").attr("disabled",false);
+		$("#id_btn_delete").attr("disabled",false);
+
+		$("#id_rdo_selected_"+paraSelectVal).attr("checked",true);
+		
+	}
+	
+	$("#id_text_name").val(paraNameVal);
+	$("#id_text_nick").val(paraNickNameVal);
+	$("#id_text_birth").val(paraBirthVal);
+	$("#id_text_cv").val(paraCVVal);
+
+	$('input:radio[name="selectRadio"]').click(function(){
+		$("#id_btn_detail")[0].className="btn-pink";
+    	$("#id_btn_update")[0].className="btn-pink";
+    	$("#id_btn_delete")[0].className="btn-pink";
+    	
+		$("#id_btn_detail").attr("disabled",false);
+		$("#id_btn_update").attr("disabled",false);
+		$("#id_btn_delete").attr("disabled",false);
+      });
+
+      
+      // ボタンコントロール
+	  $("#id_btn_search").click(function(){
+		  var paraCommon = '&name='+$("#id_text_name").val()+'&nick='+$("#id_text_nick").val()+'&birth='+$("#id_text_birth").val()+'&cv='+$("#id_text_cv").val();
+		  window.location = 'Search.html?userId='+paraUserIdVal+paraCommon;
+		});
+	  $("#id_btn_new").click(function(){
+		  var paraCommon = '&name='+$("#id_text_name").val()+'&nick='+$("#id_text_nick").val()+'&birth='+$("#id_text_birth").val()+'&cv='+$("#id_text_cv").val();
+		  window.location = 'Regist.html?userId='+paraUserIdVal+'&mode=new&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
+		});
+	  $("#id_btn_detail").click(function(){
+		  var paraCommon = '&name='+$("#id_text_name").val()+'&nick='+$("#id_text_nick").val()+'&birth='+$("#id_text_birth").val()+'&cv='+$("#id_text_cv").val();
+		  window.location = 'Regist.html?userId='+paraUserIdVal+'&mode=detail&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
+		});
+	  $("#id_btn_update").click(function(){
+		  var paraCommon = '&name='+$("#id_text_name").val()+'&nick='+$("#id_text_nick").val()+'&birth='+$("#id_text_birth").val()+'&cv='+$("#id_text_cv").val();
+		  window.location = 'Regist.html?userId='+paraUserIdVal+'&mode=update&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
+		});
+	  $("#id_btn_delete").click(function(){
+		  var paraCommon = '&name='+$("#id_text_name").val()+'&nick='+$("#id_text_nick").val()+'&birth='+$("#id_text_birth").val()+'&cv='+$("#id_text_cv").val();
+		  window.location = 'Regist.html?userId='+paraUserIdVal+'&mode=delete&selectVal='+$('input:radio[name="selectRadio"]:checked').val()+paraCommon;
+		});
+	});
+</script>
+</head>
+<body style="background-color:lightgreen">
+
+<div id="id_user" style="text-align:right"></div>
+
+<div class="header">
+	<br><h2>ウマ娘管理システム</h2><br>
+</div>
+
+<div>
+	<table width=100%>
+		<tr>
+			<td style="background-color: springgreen;" width=20%>名前</td>
+			<td width=30%><input type="text" id="id_text_name" style="width:100%; box-sizing:border-box;"></td>
+			<td style="background-color: springgreen;" width=20%>二つ名</td>
+			<td width=30%><input type="text" id="id_text_nick" style="width:100%; box-sizing:border-box;"></td>
+		</tr>
+		<tr>
+			<td style="background-color: springgreen;" width=20%>誕生日</td>
+			<td width=30%><input type="text" id="id_text_birth" style="width:100%; box-sizing:border-box;"></td>
+			<td style="background-color: springgreen;" width=20%>CV</td>
+			<td width=30%><input type="text" id="id_text_cv" style="width:100%; box-sizing:border-box;"></td>
+		</tr>
+	</table>
+</div>
+<div style="text-align:right">
+	<input id="id_btn_detail" type="button" value="詳細">
+	<input id="id_btn_delete" type="button" value="削除">
+	<input id="id_btn_update" type="button" value="更新">
+	<input id="id_btn_new" class="btn-pink" type="button" value="新規">
+	<input id="id_btn_search" class="btn-pink" type="button" value="検索">
+</div>
+
+<div id="id_result_list">
+	<table border=1 align="center">
+		<tr style="background-color: springgreen;">
+			<th width=5%>選択</th><th width=5%>番号</th><th width=20%>名前</th><th width=20%>固有二つ名</th><th width=10%>誕生日</th><th width=10%>身長</th><th width=10%>CV</th>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_1" name="selectRadio" type="radio" value="1"></td><td>01</td><td>スペシャルウィーク</td><td>日本の総大将</td><td>1995/05/02</td><td>158</td><td>和気あず未</td>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_2" name="selectRadio" type="radio" value="2"></td><td>02</td><td>サイレンススズカ</td><td>異次元の逃亡者</td><td>1994/05/01</td><td>161</td><td>高野麻里佳</td>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_3" name="selectRadio" type="radio" value="3"></td><td>03</td><td>トウカイテイオー</td><td>帝王</td><td>1988/04/20</td><td>150</td><td>Machico</td>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_4" name="selectRadio" type="radio" value="4"></td><td>04</td><td>メジロマックイーン</td><td>名優</td><td>1989/04/03</td><td>159</td><td>大西沙織</td>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_5" name="selectRadio" type="radio" value="5"></td><td>05</td><td>ゴールドシップ</td><td>破天荒</td><td>2009/03/06</td><td>170</td><td>上田瞳</td>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_6" name="selectRadio" type="radio" value="6"></td><td>06</td><td>ウォッカ</td><td>常識破りの女帝</td><td>2004/04/04</td><td>165</td><td>大橋彩香</td>
+		</tr>
+		<tr>
+			<td><input id="id_rdo_selected_7" name="selectRadio" type="radio" value="7"></td><td>07</td><td>ダイワスカーレット</td><td>ミスパーフェクト</td><td>2004/05/13</td><td>163</td><td>木村千咲</td>
+		</tr>
+	</table>
+</div>
+
+
+</body>
+</html>

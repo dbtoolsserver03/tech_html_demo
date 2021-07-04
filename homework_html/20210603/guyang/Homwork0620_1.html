@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>宿題</title>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#id_btn").click(function(){
+		var sideText="";
+		$('[name="side"]:checked').each(function(index, elm) {
+		      sideText = sideText + " "+$('label[for="' + $(elm).attr('id') + '"]').text();
+		    });
+		$("#id_textarea").val("姓："+$("#id_sei").val()+"\n"
+							+"名："+$("#id_mei").val()+"\n"
+							+"身份证号码："+$("#id_no").val()+"\n"
+							+"注册日期："+$("#id_date").val()+"\n"
+							+"性別："+$('label[for="' + $('[name="sex"]:checked').attr('id') + '"]').text()+"\n"
+							+"大区："+$('label[for="' + $('[name="server"]:checked').attr('id') + '"]').text()+"\n"
+							+"角色："+$("#id_chara option:selected").text()+"\n"
+							+"阵营："+sideText+"\n"
+							)
+	})
+})
+</script>
+
+
+
+<body style=background-color:grey>
+	<div>
+		<h1 align="center">欢迎来到反斗联盟官方注册网站</h1>
+		<p align="center">
+			在这里您将结识志同道合的伙伴，并且与伙伴们进行冒险。
+			<br>
+			欢迎注册反斗联盟，让我们展开冒险吧!
+		</p>
+		<table align="center" border="0">
+			<tr>
+				<td>姓：</td> 
+				<td><input type="text" id="id_sei"></td>
+				<td>名：</td>
+				<td><input type="text" id="id_mei"></td>
+			</tr>
+			<tr>
+				<td>身份证号码：</td>
+				<td><input type="text" id="id_no"></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>注册日期：</td>
+				<td><input type="date" id="id_date"></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>性別：</td>
+				<td colspan="3"><input name="sex" type="radio" id="id_male" value="1"><label for="id_male">男</label>
+				<input name="sex" type="radio" id="id_female"><label for="id_female">女</label></td>
+			</tr>
+			<tr>
+				<td>选择大区：</td>
+				<td colspan="3">
+					<input name="server" type="radio" id="id_server1"><label for="id_server1">起始之地</label>
+					<input name="server" type="radio" id="id_server2"><label for="id_server2">逆转未来</label>
+					<input name="server" type="radio" id="id_server3"><label for="id_server3">荣耀一战</label>
+				</td>
+				
+			</tr>
+			<tr>
+				<td>角色选择： </td>
+				<td>
+					<select id="id_chara">
+						<option value="a">骑士</option>
+						<option value="b">枪手</option>
+						<option value="c">剑士</option>
+						<option value="e">吸血鬼</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>阵营选择：</td>
+				<td colspan="3">
+					<input type="checkbox" value="1" name="side" id="id_side1"><label for="id_side1">未来学社</label>
+					<input type="checkbox" value="2" name="side" id="id_side2"><label for="id_side2">光辉之城</label>
+					<input type="checkbox" value="3" name="side" id="id_side3"><label for="id_side3">死亡圣殿</label>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<p align="center">
+			如若您之前玩过类似游戏，请写在下方框内： <br>
+			<textarea id="id_textarea" rows="5" cols="50"></textarea>
+			<br> <input align="center" id="id_btn" type="button"  value="test"  >
+		</p>
+	</div>
+
+
+</body>
+
+
+</html>
