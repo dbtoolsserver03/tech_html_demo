@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>人事情報</title>
+
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+<script type="text/javascript">
+
+function output() {
+	
+// 	var cnt = 1;
+// 	alert(cnt+1);
+	//var str = document.getElementById("id_text_sei").value;
+	
+// 	var str = document.getElementById("id_text_birthday").value;
+// 	alert(str);
+	
+	
+	// 单选按钮
+// 	var arr = document.getElementsByName("level");
+// 	var str;
+	
+// 	for(var i = 0; i < arr.length; i++){
+// 		if (arr[i].checked == true) {
+// 			str = arr[i].value;
+// 			break;
+// 		}
+// 	}
+	
+// 	alert("選択された内容は:"+str);
+
+	// 复选框
+// 	var arr = document.getElementsByName("foreign");
+// 	var str="";
+	
+// 	for(var i = 0; i < arr.length; i++){
+// 		if (arr[i].checked == true) {
+// 			str = str + arr[i].value + ",";
+// 		}
+// 	}
+// 	var content = str.substr(0,str.length-1);
+// 	alert("選択された内容は:"+content);
+
+	// 下拉列表
+ 	var e = document.getElementById("id_select_salary");
+	var str = e.value;
+	
+	document.getElementById("id_content").innerText = str;
+	
+	
+	var sei = document.getElementById("id_text_sei").value;
+	var mei = document.getElementById("id_text_mei").value;
+	var tel = document.getElementById("id_text_tel").value;
+	
+	document.getElementById("id_text_area").value=sei + mei +"\n"+ tel;
+}
+
+</script>
+</head>
+
+
+<body>
+<div id="id_user_id" class="align-right">
+
+</div>
+
+
+<div id="id_info">
+	<table width="100%">
+
+		<tr>
+			<td width="20%" class="background-color-td">姓</td>
+			<td width="30%"><input id="id_text_sei" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">名</td>
+			<td width="30%"><input id="id_text_mei" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">電話番号</td>
+			<td width="30%"><input id="id_text_tel" width="100%" type="text"></td>
+			<td width="20%" class="background-color-td">住所</td>
+			<td width="30%"><input id="id_text_address" width="100%" type="text"></td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">生年月日</td>
+			<td width="30%"><input id="id_text_birthday" width="100%" type="date"></td>
+			<td width="20%" class="background-color-td">性別</td>
+			<td width="30%"><input id="id_radio_sex_man" name="sex" type="radio" value="男" />男
+			                <input id="id_radio_sex_woman" name="sex" type="radio" value="女" />女</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">職別</td>
+			<td width="30%"><input id="id_radio_level_pg" name="level" type="radio"  value="PG"/>PG <input name="level" type="radio" value="SE"/>SE<input name="level" type="radio" value="PM" />PM</td>
+			<td width="20%" class="background-color-td">年収</td>
+			<td width="30%">
+				<select id="id_select_salary">
+					<option value="z" selected="selected"></option>
+					<option value="a">1W-10W</option>
+					<option value="b">11W-20W</option>
+					<option value="c">21W-30W</option>
+					<option value="d">31W-40W</option>
+					<option value="e">41W-50W</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">技術スキル</td>
+			<td  colspan="3" width="80%">
+				<input id="id_chk_skill_java" type="checkbox" value="1">JAVA
+				<input id="id_chk_skill_c" type="checkbox" value="2">C
+				<input type="checkbox" value="3">C++
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="background-color-td">外国語</td>
+			<td  colspan="3" width="80%">
+				<input type="checkbox" name="foreign" value="1">ENGLISH
+				<input type="checkbox" name="foreign" value="2">CHINA
+				<input id="id_chk_lan_japan" type="checkbox" name="foreign" value="3">JAPAN
+			</td>
+		</tr>
+
+	</table>
+
+</div>
+<div>
+<!-- onmouseover="alert('over')" -->
+<input id="id_test" type="button" value="test DOM" onclick="output();">
+<input id="id_test_jquery" type="button" value="test JQUERY">
+</div>
+
+<div id="id_content">
+xxxxxxxxxxxxxxxx
+</div>
+
+<textarea id="id_text_area" rows="5" cols="60">yyyyy</textarea>
+
+</body>
+</html>
