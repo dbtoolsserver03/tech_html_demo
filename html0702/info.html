@@ -7,59 +7,80 @@
 <title>人事情報</title>
 
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
-
-<script type="text/javascript">
-
-function output() {
-	
-// 	var cnt = 1;
-// 	alert(cnt+1);
-	//var str = document.getElementById("id_text_sei").value;
-	
-// 	var str = document.getElementById("id_text_birthday").value;
-// 	alert(str);
-	
-	
-	// 单选按钮
-// 	var arr = document.getElementsByName("level");
-// 	var str;
-	
-// 	for(var i = 0; i < arr.length; i++){
-// 		if (arr[i].checked == true) {
-// 			str = arr[i].value;
-// 			break;
-// 		}
-// 	}
-	
-// 	alert("選択された内容は:"+str);
-
-	// 复选框
-// 	var arr = document.getElementsByName("foreign");
-// 	var str="";
-	
-// 	for(var i = 0; i < arr.length; i++){
-// 		if (arr[i].checked == true) {
-// 			str = str + arr[i].value + ",";
-// 		}
-// 	}
-// 	var content = str.substr(0,str.length-1);
-// 	alert("選択された内容は:"+content);
-
-	// 下拉列表
- 	var e = document.getElementById("id_select_salary");
-	var str = e.value;
-	
-	document.getElementById("id_content").innerText = str;
-	
-	
-	var sei = document.getElementById("id_text_sei").value;
-	var mei = document.getElementById("id_text_mei").value;
-	var tel = document.getElementById("id_text_tel").value;
-	
-	document.getElementById("id_text_area").value=sei + mei +"\n"+ tel;
-}
-
+<script src="./js/jquery-3.6.0.js">
 </script>
+<script type="text/javascript">
+$(document).ready(function(){
+	  $("#id_test_jquery").click(function(){
+// 		  alert($("#id_text_sei").val());
+// 		  alert($("#id_text_birthday").val());
+// 		  alert($("[name='level']:checked ").val());
+		  var arr = $("[name='foreign']:checked");
+		  var str = "";
+
+			for (var i = 0; i < arr.length; i++) {
+				str = str + arr[i].value;
+			}
+
+			$("#id_text_area").val(
+									$("#id_text_sei").val() 
+									+ $("#id_text_mei").val()
+									+ "\n"
+									+ $("#id_text_tel").val()
+								)
+		});
+	});
+
+	function output() {
+
+		// 	var cnt = 1;
+		// 	alert(cnt+1);
+		//var str = document.getElementById("id_text_sei").value;
+
+		// 	var str = document.getElementById("id_text_birthday").value;
+		// 	alert(str);
+
+		// 单选按钮
+		// 	var arr = document.getElementsByName("level");
+		// 	var str;
+
+		// 	for(var i = 0; i < arr.length; i++){
+		// 		if (arr[i].checked == true) {
+		// 			str = arr[i].value;
+		// 			break;
+		// 		}
+		// 	}
+
+		// 	alert("選択された内容は:"+str);
+
+		// 复选框
+		// 	var arr = document.getElementsByName("foreign");
+		// 	var str="";
+
+		// 	for(var i = 0; i < arr.length; i++){
+		// 		if (arr[i].checked == true) {
+		// 			str = str + arr[i].value + ",";
+		// 		}
+		// 	}
+		// 	var content = str.substr(0,str.length-1);
+		// 	alert("選択された内容は:"+content);
+
+		// 下拉列表
+		var e = document.getElementById("id_select_salary");
+		var str = e.value;
+
+		document.getElementById("id_content").innerText = str;
+
+		var sei = document.getElementById("id_text_sei").value;
+		var mei = document.getElementById("id_text_mei").value;
+		var tel = document.getElementById("id_text_tel").value;
+
+		document.getElementById("id_text_area").value = sei + mei + "\n" + tel;
+	}
+</script>
+
+
+
 </head>
 
 
